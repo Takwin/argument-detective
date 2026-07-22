@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+---
+
+<BaseLayout
+  title="Credits and licensing"
+  description="How Argument Detective is licensed, what it was inspired by, and how it stays independent and noncommercial."
+  path="/credits/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Credits' }]} />
+
+  <article class="page prose">
+    <h1>Credits &amp; licensing</h1>
+
+    <p>
+      {site.name} is an independent, noncommercial educational project. Its original classroom explanations,
+      examples, activities, and organization were created for gifted students in grades 5–6. The project
+      was inspired in part by <em>Your Logical Fallacy Is</em>, created by Jesse Richardson, Andy
+      Smith, Som Meaden, and Flip Creative for The School of Thought. Website content from that
+      project is published under
+      <a href="https://creativecommons.org/licenses/by-nc/3.0/" rel="noopener noreferrer"
+        >CC BY-NC 3.0</a
+      >. Where any wording has been adapted, the relevant page identifies the source and describes
+      the changes. No endorsement is implied. LogicalFallacies.org was consulted as a reference and
+      is linked for further reading; its protected content, examples, graphics, and tool designs
+      were not reproduced.
+    </p>
+
+    <h2>Licenses</h2>
+    <ul class="qlist">
+      <li>
+        <strong>Source code:</strong>
+        <a href="https://opensource.org/license/mit" rel="noopener noreferrer">MIT License</a>.
+      </li>
+      <li>
+        <strong>Original educational text and printable resources:</strong>
+        <a href={site.contentLicenseUrl} rel="noopener noreferrer">{site.contentLicense}</a>
+        (Creative Commons Attribution-NonCommercial 4.0 International).
+      </li>
+      <li>
+        <strong>Adapted portions:</strong> keep the source-specific notice required by the original license,
+        shown on the relevant page.
+      </li>
+      <li>
+        <strong>Third-party packages:</strong> preserve their original licenses, listed in the repository’s
+        <code>THIRD_PARTY_NOTICES.md</code>.
+      </li>
+    </ul>
+
+    <h2>Independence</h2>
+    <p>
+      This site is free to visitors and carries no advertising, sponsorship, affiliate links, or
+      paid tier. All 15 topic pages use original explanations and examples written from a blank
+      page. Icons are original SVGs created for the project; no reference site’s icon system, page
+      layout, or writing was copied.
+    </p>
+
+    <h2>References consulted</h2>
+    <ul class="qlist">
+      <li>
+        <a href="https://iep.utm.edu/fallacy/" rel="noopener noreferrer"
+          >Internet Encyclopedia of Philosophy: Fallacies</a
+        >
+      </li>
+      <li>
+        <a href="https://plato.stanford.edu/entries/fallacies/" rel="noopener noreferrer"
+          >Stanford Encyclopedia of Philosophy: Fallacies</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html"
+          rel="noopener noreferrer">Purdue OWL: Logical Fallacies</a
+        >
+      </li>
+      <li>
+        <a href="https://writingcenter.unc.edu/tips-and-tools/fallacies/" rel="noopener noreferrer"
+          >UNC Writing Center: Fallacies</a
+        >
+      </li>
+      <li>
+        <a href="https://yourlogicalfallacyis.com/" rel="noopener noreferrer"
+          >Your Logical Fallacy Is</a
+        >
+      </li>
+      <li>
+        <a href="https://www.logicalfallacies.org/" rel="noopener noreferrer"
+          >LogicalFallacies.org</a
+        >
+      </li>
+    </ul>
+  </article>
+</BaseLayout>

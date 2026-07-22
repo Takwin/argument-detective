@@ -1,0 +1,116 @@
+number: 14
+slug: guilt-by-association
+title: Guilt by Association
+shortTitle: Association
+family: distort-or-dodge
+icon: guilt-by-association
+aliases:
+  - association fallacy
+  - genetic fallacy
+  - bad company
+keywords:
+  - connected to
+  - friends with
+  - linked
+  - transfer blame
+  - association
+shortDefinition: >-
+  Guilt by association dismisses a person or claim because of a disliked connection rather than relevant evidence about the person or claim.
+carefulDefinition: >-
+  Association can be relevant when it shows coordination, participation, influence, funding, or conflict of interest. The fallacy occurs when a negative label is transferred merely because two people, groups, or ideas are connected in some way, without evidence that the connection matters.
+movePattern:
+  - Person or group A is disliked or distrusted.
+  - Person or idea B has some association with A.
+  - Therefore B must be bad, false, or unworthy of consideration.
+whyPersuasive:
+  - Social labels are fast and emotional.
+  - Distrust spreads easily between connected things.
+  - Audiences may stop examining the actual claim once a disliked link appears.
+clearExamples:
+  - title: The unpopular supporter
+    text: >-
+      "The most unpopular student also supports the longer-recess proposal, so the proposal must be a bad idea."
+    diagnosis:
+      - The proposal is judged by who supports it.
+      - The student's popularity has no bearing on recess length.
+      - The proposal's actual effects are never examined.
+    repairedVersion: >-
+      "Let us evaluate the longer-recess proposal on its schedule, supervision, and expected benefits, regardless of who supports it."
+  - title: Bad company
+    text: >-
+      "She is friends with students who have broken rules, so her argument about a fair grading policy does not count."
+    diagnosis:
+      - The claim is about a fair grading policy.
+      - The response points to her friendships.
+      - Friendship does not refute the policy argument.
+    repairedVersion: >-
+      "Let us judge the grading-policy argument on its own reasoning and evidence, not on who her friends are."
+nonExample:
+  title: A relevant conflict of interest
+  text: >-
+    "The vendor's safety report should be checked independently because the report was funded and written by the company selling the product."
+  explanation: >-
+    Here the relationship creates a real conflict-of-interest question worth investigating. Noting a relevant connection and then checking the evidence is not automatic guilt by association.
+borderlineCase:
+  title: A public endorsement
+  text: >-
+    A group publicly endorses a candidate or proposal.
+  questions:
+    - Does the endorsement reveal relevant values or alliances?
+    - Or is it being used to dismiss the proposal without examining it?
+    - Has the proposal's content and evidence still been evaluated?
+legitimateWhen:
+  - The association shows direct participation or coordination.
+  - The relationship creates a relevant conflict of interest.
+  - The claim being evaluated is specifically about affiliations or conduct.
+  - The association is one piece of evidence rather than the entire case.
+diagnosticQuestions:
+  - What is the exact association?
+  - Is it direct, indirect, voluntary, or accidental?
+  - How is the association relevant to the claim?
+  - Was the claim itself ever evaluated?
+spotProveRepair:
+  sourceText: >-
+    "Do not use that study method because a student I dislike uses it."
+  spot: >-
+    This looks like guilt by association.
+  prove:
+    - The claim is about whether the study method works.
+    - The reason is that a disliked student uses it.
+    - Who else uses a method says nothing about whether it works.
+  repair: >-
+    "Let us compare the study method's steps, evidence, and results, no matter who uses it."
+projectLaunchpad:
+  essentialQuestion: >-
+    When does a connection actually matter, and when is it just a label being passed along?
+  huntIdeas:
+    - Advertisements that link a rival to something disliked.
+    - Debates that dismiss ideas by their supporters.
+    - Fictional stories about reputation by association.
+    - Public discussions of endorsements, in neutral form.
+  researchQuestions:
+    - What is the exact connection being used?
+    - Is it direct participation or a loose link?
+    - How, if at all, is the connection relevant to the claim?
+    - Was the claim evaluated on its own?
+  productIdeas:
+    - An "association map" distinguishing mere connection from relevant participation or influence.
+    - A rewritten claim that judges the idea on its merits.
+    - A comparison of a relevant conflict of interest and an irrelevant link.
+    - A short skit showing a label being unfairly transferred.
+  caution: >-
+    Some associations are relevant, such as funding or coordination. The fallacy is transferring blame through a connection that does not matter to the claim.
+related:
+  - slug: ad-hominem
+    relationship: Ad hominem attacks the person's own traits; guilt by association attacks through a disliked connection.
+  - slug: appeal-to-authority
+    relationship: Appeal to authority borrows credit from an admired link; guilt by association passes blame from a disliked one.
+  - slug: whataboutism
+    relationship: Both use a comparison or connection to avoid evaluating the actual claim.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Fallacies'
+    url: https://plato.stanford.edu/entries/fallacies/

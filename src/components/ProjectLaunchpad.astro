@@ -1,0 +1,44 @@
+---
+import Callout from './Callout.astro';
+
+interface Props {
+  data: {
+    essentialQuestion: string;
+    huntIdeas: string[];
+    researchQuestions: string[];
+    productIdeas: string[];
+    caution?: string;
+  };
+}
+const { data } = Astro.props;
+---
+
+<div class="teaser stack">
+  <div>
+    <p class="eyebrow" style="margin-bottom:var(--space-1);">Essential question</p>
+    <p style="font-size:1.1rem;font-weight:600;margin:0;">{data.essentialQuestion}</p>
+  </div>
+
+  <div class="grid grid-3" style="margin-top:var(--space-4);">
+    <div>
+      <h3>Where to hunt for examples</h3>
+      <ul class="qlist">{data.huntIdeas.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <div>
+      <h3>Questions to research</h3>
+      <ul class="qlist">{data.researchQuestions.map((x) => <li>{x}</li>)}</ul>
+    </div>
+    <div>
+      <h3>Project products to try</h3>
+      <ul class="qlist">{data.productIdeas.map((x) => <li>{x}</li>)}</ul>
+    </div>
+  </div>
+
+  {
+    data.caution && (
+      <Callout variant="note" title="Most common misdiagnosis">
+        <p style="margin:0;">{data.caution}</p>
+      </Callout>
+    )
+  }
+</div>

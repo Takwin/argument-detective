@@ -1,0 +1,36 @@
+slug: anecdotal-vs-hasty-generalization
+order: 1
+left:
+  label: Anecdotal Fallacy
+  slug: anecdotal-fallacy
+right:
+  label: Hasty Generalization
+  slug: hasty-generalization
+distinction: >-
+  Anecdotal fallacy focuses on using a story as evidence; hasty generalization focuses on drawing a conclusion too broad for the sample. One argument can commit both.
+rows:
+  - question: Main problem
+    left: The kind of evidence, a single story
+    right: The size or representativeness of the sample
+  - question: Typical form
+    left: 'This happened to me, so...'
+    right: 'A few cases were like this, so the whole group is...'
+  - question: Can one case be useful?
+    left: Yes, to illustrate or to prove that something is possible
+    right: Yes, if the conclusion is limited to that case
+  - question: Repair
+    left: Add broader evidence beyond the story
+    right: Match the conclusion to a strong, representative sample
+fitsLeft: >-
+  "This vitamin worked for my aunt, so it works." A single personal story is offered as the proof.
+fitsRight: >-
+  "I asked three classmates and they all liked the new schedule, so the whole school prefers it." A tiny sample is stretched to the whole school.
+fitsBoth: >-
+  "My cousin disliked one online class, so online classes never help anyone." A single story is also generalized to everyone.
+fitsNeither: >-
+  "My cousin disliked one online class. Her story raised a question, so I compared a large set of student surveys and outcomes."
+decisionPath:
+  - Is a personal story doing most of the evidentiary work?
+  - Does the conclusion jump from a few cases to a broad group?
+  - Is the claim about possibility, frequency, or universality?
+  - Is stronger or larger evidence available?

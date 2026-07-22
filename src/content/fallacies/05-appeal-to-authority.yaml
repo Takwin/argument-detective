@@ -1,0 +1,119 @@
+number: 5
+slug: appeal-to-authority
+title: Appeal to Authority
+shortTitle: Authority
+family: weak-evidence
+icon: appeal-to-authority
+aliases:
+  - false authority
+  - misplaced authority
+  - expert opinion
+  - celebrity endorsement
+keywords:
+  - expert
+  - famous
+  - title
+  - trust the source
+  - endorsement
+shortDefinition: >-
+  This fallacy treats a claim as true mainly because an admired or powerful source says it, without checking relevant expertise and evidence.
+carefulDefinition: >-
+  Expert testimony can be reasonable evidence. The fallacious form is a misplaced or unsupported appeal to authority. It occurs when the source lacks relevant expertise, the claim falls outside the field, the authority is presented as infallible, expert disagreement is hidden, or the opinion replaces rather than summarizes supporting evidence.
+movePattern:
+  - Authority A says claim X.
+  - Therefore X must be true.
+  - Relevance, evidence, limits, and other expert views are not examined.
+whyPersuasive:
+  - Status saves mental effort; trusting a source is faster than checking evidence.
+  - Familiar faces, titles, uniforms, and institutions create confidence.
+  - A confident expert can make a claim feel settled.
+clearExamples:
+  - title: The actor and the vitamin
+    text: >-
+      "A famous actor says this vitamin prevents colds, so it must work."
+    diagnosis:
+      - The claim is medical, but acting is unrelated to clinical evidence.
+      - Fame is treated as if it were relevant expertise.
+      - No study or mechanism is offered, only the source's status.
+    repairedVersion: >-
+      "An actor recommended this vitamin. Before believing it prevents colds, let us look for clinical research and guidance from medical experts."
+  - title: The athlete and the toothpaste
+    text: >-
+      "A championship basketball player says this brand of toothpaste repairs cavities, so the claim is scientifically proven."
+    diagnosis:
+      - Athletic success has nothing to do with dentistry.
+      - A paid endorsement is treated as scientific proof.
+      - The word "proven" hides the absence of dental evidence.
+    repairedVersion: >-
+      "An athlete endorses this toothpaste. To say it repairs cavities, we need dental research, not a sports celebrity's name."
+nonExample:
+  title: Relevant expert guidance
+  text: >-
+    "A pediatrician explains the recommendation, cites research from a professional medical body, and notes the limits of the evidence."
+  explanation: >-
+    Relevant expertise combined with cited evidence and honest limits is meaningful evidence. It remains open to checking, but it is not the fallacy.
+borderlineCase:
+  title: A science communicator outside their degree
+  text: >-
+    A science communicator summarizes a field outside their formal degree but links directly to high-quality research and expert consensus.
+  questions:
+    - Is the summary accurate and backed by strong sources?
+    - Is the audience being asked to trust the title or the evidence behind it?
+    - Does expert consensus support the same claim?
+legitimateWhen:
+  - The source has expertise relevant to the exact claim.
+  - The field has reliable methods.
+  - The claim reflects broad expert consensus.
+  - The authority explains the evidence and its limits.
+  - The audience relies on specialists while remaining open to verification.
+diagnosticQuestions:
+  - Expertise in what field, exactly?
+  - Is that field relevant to this specific claim?
+  - What evidence supports the statement itself?
+  - Is the speaker presented as impossible to question?
+  - Do qualified experts broadly agree?
+spotProveRepair:
+  sourceText: >-
+    "A popular streamer says blue-light glasses guarantee better grades, so they do."
+  spot: >-
+    This looks like a misplaced appeal to authority.
+  prove:
+    - Popularity on a streaming platform is not expertise in vision or learning.
+    - No study connects blue-light glasses to guaranteed grades.
+    - A comfort claim is being sold as a grade guarantee.
+  repair: >-
+    "A streamer likes these glasses. Let us separate comfort claims from grade claims and check whether any vision or learning research supports them."
+projectLaunchpad:
+  essentialQuestion: >-
+    When does an expert's word count as evidence, and when is it just borrowed status?
+  huntIdeas:
+    - Celebrity or influencer product endorsements.
+    - Advertisements that show titles, coats, or awards.
+    - Claims that cite a "famous scientist" without a study.
+    - Fictional characters who defer to a powerful figure.
+  researchQuestions:
+    - Who is the source, and what is their real expertise?
+    - Is that expertise relevant to this claim?
+    - What evidence stands behind the statement?
+    - Do other qualified experts agree?
+  productIdeas:
+    - An "authority-check card" scoring relevance, evidence, consensus, conflict of interest, and limits.
+    - A rewritten ad that replaces a celebrity with real evidence.
+    - A comparison of a relevant expert and an irrelevant one.
+    - A short explainer on the difference between fame and expertise.
+  caution: >-
+    Do not swing to "experts cannot be trusted." Relevant expertise with evidence is one of the stronger kinds of support.
+related:
+  - slug: bandwagon
+    relationship: Bandwagon relies on how many people believe a claim; appeal to authority relies on one powerful source.
+  - slug: anecdotal-fallacy
+    relationship: Both replace broad evidence with a single source, one a story and one a person's status.
+  - slug: guilt-by-association
+    relationship: Guilt by association judges a claim by a bad connection; appeal to authority judges it by an admired one.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Fallacies'
+    url: https://plato.stanford.edu/entries/fallacies/

@@ -1,0 +1,19 @@
+---
+import { withBase } from '../data/site';
+
+interface Props {
+  related: Array<{ slug: string; title: string; relationship: string }>;
+}
+const { related } = Astro.props;
+---
+
+<div class="related-grid">
+  {
+    related.map((item) => (
+      <article class="related-card">
+        <a href={withBase(`/fallacies/${item.slug}/`)}>{item.title}</a>
+        <p>{item.relationship}</p>
+      </article>
+    ))
+  }
+</div>

@@ -1,0 +1,35 @@
+slug: straw-man-vs-strong-disagreement
+order: 7
+left:
+  label: Straw Man
+  slug: straw-man
+right:
+  label: Strong Disagreement
+distinction: >-
+  A straw man changes the position before attacking it; strong disagreement accurately states the position and gives reasons against it.
+rows:
+  - question: Summary of the position
+    left: Distorted, exaggerated, or stripped of limits
+    right: Fair and recognizable
+  - question: Target of the response
+    left: A replacement claim the person did not make
+    right: The person's actual claim
+  - question: Key evidence
+    left: Side-by-side wording reveals the change
+    right: The speaker can accept the summary as fair
+  - question: Repair
+    left: Restate the real position, then respond to it
+    right: Already fair; continue the discussion
+fitsLeft: >-
+  "You want one quiet study period, so you want school to be silent all day."
+fitsRight: >-
+  "You want one quiet study period. I oppose it because the schedule already has a silent reading block and this would remove lab time."
+fitsBoth: >-
+  A response can start fair and then slide into exaggeration, mixing an accurate summary with a distorted attack.
+fitsNeither: >-
+  A neutral clarifying question that simply asks the speaker to confirm what they meant.
+decisionPath:
+  - Restate the original claim in the speaker's own terms.
+  - Compare it word-for-word with the version being attacked.
+  - Did the response remove a limit or add an extreme?
+  - Would the original speaker accept the summary as fair?

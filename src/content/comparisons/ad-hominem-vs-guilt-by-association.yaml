@@ -1,0 +1,36 @@
+slug: ad-hominem-vs-guilt-by-association
+order: 3
+left:
+  label: Ad Hominem
+  slug: ad-hominem
+right:
+  label: Guilt by Association
+  slug: guilt-by-association
+distinction: >-
+  Ad hominem attacks a person's own traits; guilt by association transfers a negative judgment from someone or something connected to that person.
+rows:
+  - question: Target
+    left: The speaker's own trait or character
+    right: The speaker's connection to another person or group
+  - question: Example
+    left: 'Your plan is wrong because you are lazy.'
+    right: 'Your plan is wrong because someone unpopular agrees with it.'
+  - question: Relevance test
+    left: Does the trait bear on the evidence or credibility?
+    right: Does the relationship show participation, influence, or conflict?
+  - question: Repair
+    left: Evaluate the argument itself, not the person
+    right: Evaluate the claim on its merits, not the connection
+fitsLeft: >-
+  "Do not trust her budget plan; she is disorganized." The attack targets her own trait.
+fitsRight: >-
+  "Do not trust his budget plan; his friend once overspent." The attack travels through a connection.
+fitsBoth: >-
+  "You are dishonest, and you spend time with dishonest people, so your evidence does not matter." This mixes a direct personal attack with an association-based one.
+fitsNeither: >-
+  A relevant conflict-of-interest disclosure followed by an independent check of the evidence.
+decisionPath:
+  - Was the argument itself addressed at all?
+  - Is the attack aimed at the person's own trait or at a connection?
+  - Is that trait or connection relevant to the claim?
+  - Would independent evidence settle the question?

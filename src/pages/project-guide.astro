@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Callout from '../components/Callout.astro';
+import { withBase } from '../data/site';
+import { FALLACY_FALLACY_SAFEGUARD } from '../data/glossary';
+
+const stages = [
+  {
+    name: 'Choose',
+    points: [
+      'Read the short definitions for several topics.',
+      'Choose one that interests you and that you can explain clearly.',
+      'Check the comparison guides if two topics seem alike.',
+    ],
+  },
+  {
+    name: 'Find',
+    points: [
+      'Safe sources: teacher-provided texts, advertisements, product packaging or slogans, fiction, and approved public speeches or interviews.',
+      'You may also invent an example modeled on a real pattern.',
+      'Avoid private messages, arguments with classmates, comment-section fights, personal accusations, and long copyrighted passages.',
+    ],
+  },
+  {
+    name: 'Map',
+    points: [
+      'Record the exact quotation and its source.',
+      'Identify the claim or conclusion, the reasons, the evidence, and any hidden assumption.',
+      'Note the context before and after the quotation.',
+    ],
+  },
+  {
+    name: 'Prove',
+    points: [
+      'Do not write only "This is bandwagon."',
+      'Name the exact sentence where the reasoning fails and say why.',
+      'Explain what the evidence does and does not support.',
+    ],
+  },
+  {
+    name: 'Repair',
+    points: [
+      'Preserve the speaker’s reasonable goal.',
+      'Replace the flawed support with stronger reasoning.',
+      'Change the original claim as little as necessary.',
+    ],
+  },
+  {
+    name: 'Cite and present',
+    points: [
+      'Record the creator or organization, title, where it appeared, and a date if available.',
+      'Include a direct URL for online material and a page, timestamp, or image number when useful.',
+      'Choose a format that fits your assignment’s requirements.',
+    ],
+  },
+];
+
+const templateFields = [
+  'My topic',
+  'Source and exact quotation',
+  'Context',
+  'Main conclusion',
+  'Reason or evidence offered',
+  'Possible fallacy',
+  'Exact point where the reasoning fails',
+  'Could another label fit? Why or why not?',
+  'What additional context would change my judgment?',
+  'Why might this argument persuade someone?',
+  'A fair reconstruction of the intended claim',
+  'A repaired argument',
+  'Source citation',
+];
+
+const checklist = [
+  'I quoted the source accurately.',
+  'I included enough context.',
+  'I identified the conclusion.',
+  'I identified the reason or evidence.',
+  'I explained the flaw instead of only naming it.',
+  'I considered a non-fallacious interpretation.',
+  'I explained why the argument may feel convincing.',
+  'I repaired the reasoning.',
+  'I remembered that a weak argument does not automatically make the conclusion false.',
+  'I cited the original source.',
+  'My example is appropriate for school.',
+];
+
+const formats = [
+  'Annotated advertisement',
+  'Before-and-after argument map',
+  'Two-panel or four-panel comic',
+  'Short narrated slide deck',
+  'Mini-podcast script',
+  'Infographic',
+  'Dramatic scene with a repaired second version',
+  'Museum-style exhibit card',
+  'Comparison chart',
+  'Case-file folder',
+];
+---
+
+<BaseLayout
+  title="Project guide"
+  description="A step-by-step workflow for the logical-fallacies project: choose, find, map, prove, repair, and cite."
+  path="/project-guide/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Project Guide' }]} />
+
+  <article class="page prose">
+    <h1>Project guide</h1>
+    <p style="font-size:1.15rem;">
+      Your job is not only to name a fallacy. Your job is to show exactly how the reasoning works,
+      explain what fails, and build a fairer version.
+    </p>
+
+    <h2 id="workflow">The six-stage workflow</h2>
+    <ol class="stack" style="list-style:none;padding:0;counter-reset:stage;">
+      {
+        stages.map((stage) => (
+          <li class="teaser" style="counter-increment:stage;">
+            <h3 style="margin-top:0;">
+              Stage {stages.indexOf(stage) + 1}: {stage.name}
+            </h3>
+            <ul class="qlist" style="margin:0;">
+              {stage.points.map((p) => (
+                <li>{p}</li>
+              ))}
+            </ul>
+          </li>
+        ))
+      }
+    </ol>
+
+    <Callout variant="safeguard" title="Keep in mind">
+      <p style="margin:0;">{FALLACY_FALLACY_SAFEGUARD}</p>
+    </Callout>
+
+    <h2 id="template">Student analysis template</h2>
+    <p>
+      Copy these prompts into your notes, or use the printable
+      <a href={withBase('/resources/project-planner/')}>project planner</a>.
+    </p>
+    <div class="teaser">
+      <dl>
+        {
+          templateFields.map((field) => (
+            <div style="margin-bottom:var(--space-3);">
+              <dt style="font-weight:700;">{field}:</dt>
+              <dd style="margin:0;color:var(--muted-ink);">&nbsp;</dd>
+            </div>
+          ))
+        }
+      </dl>
+    </div>
+
+    <h2 id="checklist">Final project checklist</h2>
+    <ul class="qlist" style="list-style:none;padding-left:0;">
+      {checklist.map((item) => <li>&#9744; {item}</li>)}
+    </ul>
+
+    <h2 id="formats">Suggested project formats</h2>
+    <p>The site does not require any format. Pick one that fits your assignment.</p>
+    <ul class="qlist">
+      {formats.map((f) => <li>{f}</li>)}
+    </ul>
+  </article>
+</BaseLayout>

@@ -1,0 +1,21 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { withBase } from '../data/site';
+---
+
+<BaseLayout title="Page not found" description="That page could not be found." path="/404.html">
+  <section class="page prose" style="padding-block:var(--space-12);">
+    <p class="eyebrow">Error 404</p>
+    <h1>That trail went cold.</h1>
+    <p style="font-size:1.15rem;">
+      The page you were looking for could not be found. Here are some good places to pick the case
+      back up:
+    </p>
+    <ul class="qlist">
+      <li><a href={withBase('/')}>All 15 fallacies</a></li>
+      <li><a href={withBase('/how-arguments-work/')}>How arguments work</a></li>
+      <li><a href={withBase('/project-guide/')}>The project guide</a></li>
+      <li><a href={withBase('/compare/')}>Comparison guides</a></li>
+    </ul>
+  </section>
+</BaseLayout>

@@ -1,0 +1,106 @@
+---
+import { site, withBase } from '../data/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  /** Current page path used to mark the active nav item. */
+  currentPath: string;
+}
+const { currentPath } = Astro.props;
+
+const navItems = [
+  { label: 'Fallacies', href: '/', match: /^\/(fallacies\/)?$/ },
+  { label: 'Compare', href: '/compare/', match: /^\/compare\// },
+  { label: 'How Arguments Work', href: '/how-arguments-work/', match: /^\/how-arguments-work\/?$/ },
+  { label: 'Project Guide', href: '/project-guide/', match: /^\/project-guide\/?$/ },
+  { label: 'Print & Resources', href: '/resources/', match: /^\/resources\// },
+  { label: 'Credits', href: '/credits/', match: /^\/credits\/?$/ },
+];
+
+// Normalize the incoming path (strip the configured base) for matching.
+const base = withBase('/');
+let normalized = currentPath;
+if (base !== '/' && normalized.startsWith(base.slice(0, -1))) {
+  normalized = normalized.slice(base.length - 1);
+}
+if (!normalized.startsWith('/')) normalized = '/' + normalized;
+---
+
+<header class="site-header">
+  <div class="page site-header__inner">
+    <a class="brand" href={withBase('/')}>
+      <span class="brand__mark"><Icon name="compass" size={34} /></span>
+      <span>
+        <span class="brand__name">{site.name}</span>
+        <span class="brand__sub">{site.subtitle}</span>
+      </span>
+    </a>
+
+    <button
+      class="nav-toggle"
+      type="button"
+      hidden
+      aria-expanded="false"
+      aria-controls="primary-nav"
+      data-nav-toggle
+    >
+      <Icon name="menu" size={20} />
+      <span>Menu</span>
+    </button>
+
+    <nav class="primary-nav" id="primary-nav" aria-label="Primary">
+      <ul>
+        {
+          navItems.map((item) => {
+            const isActive = item.match.test(normalized);
+            return (
+              <li>
+                <a href={withBase(item.href)} aria-current={isActive ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              </li>
+            );
+          })
+        }
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  // Progressive enhancement: nav is visible without JS. When JS runs, the
+  // toggle button is revealed and the nav collapses on small screens.
+  const toggle = document.querySelector<HTMLButtonElement>('[data-nav-toggle]');
+  const nav = document.getElementById('primary-nav');
+  const mq = window.matchMedia('(max-width: 52rem)');
+
+  if (toggle && nav) {
+    toggle.hidden = false;
+
+    const setOpen = (open: boolean) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      if (mq.matches) {
+        nav.hidden = !open;
+      } else {
+        nav.hidden = false;
+      }
+    };
+
+    // Collapse on small screens initially.
+    setOpen(false);
+
+    toggle.addEventListener('click', () => {
+      const open = toggle.getAttribute('aria-expanded') === 'true';
+      setOpen(!open);
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+        setOpen(false);
+        toggle.focus();
+      }
+    });
+
+    mq.addEventListener('change', () => setOpen(false));
+  }
+</script>

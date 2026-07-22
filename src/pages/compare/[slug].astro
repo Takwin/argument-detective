@@ -1,0 +1,116 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ExamplePanel from '../../components/ExamplePanel.astro';
+import PrintButton from '../../components/PrintButton.astro';
+import { withBase } from '../../data/site';
+import { getSortedComparisons } from '../../data/fallacies';
+
+export const getStaticPaths = (async () => {
+  const comparisons = await getSortedComparisons();
+  return comparisons.map((entry) => ({
+    params: { slug: entry.data.slug },
+    props: { data: entry.data },
+  }));
+}) satisfies GetStaticPaths;
+
+const { data } = Astro.props;
+const path = `/compare/${data.slug}/`;
+const title = `${data.left.label} vs. ${data.right.label}`;
+
+const leftHref = data.left.slug ? withBase(`/fallacies/${data.left.slug}/`) : null;
+const rightHref = data.right.slug ? withBase(`/fallacies/${data.right.slug}/`) : null;
+---
+
+<BaseLayout title={title} description={data.distinction} path={path}>
+  <Breadcrumbs
+    items={[
+      { label: 'Fallacies', href: '/' },
+      { label: 'Compare', href: '/compare/' },
+      { label: title },
+    ]}
+  />
+
+  <article class="page">
+    <header class="topic-header prose">
+      <p class="eyebrow">Comparison guide</p>
+      <h1>{title}</h1>
+      <p style="font-size:1.2rem;">{data.distinction}</p>
+      <div data-print="hide"><PrintButton /></div>
+    </header>
+
+    <section class="section-block" aria-labelledby="table-h">
+      <h2 id="table-h">Side by side</h2>
+      <div class="table-scroll">
+        <table class="data">
+          <thead>
+            <tr>
+              <th scope="col">Question</th>
+              <th scope="col">{data.left.label}</th>
+              <th scope="col">{data.right.label}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              data.rows.map((row) => (
+                <tr>
+                  <th scope="row">{row.question}</th>
+                  <td>{row.left}</td>
+                  <td>{row.right}</td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="section-block" aria-labelledby="cases-h">
+      <h2 id="cases-h">Which one is it?</h2>
+      <ExamplePanel variant="example" label={`Fits ${data.left.label}`}>
+        <p style="margin:0;">{data.fitsLeft}</p>
+      </ExamplePanel>
+      <ExamplePanel variant="example" label={`Fits ${data.right.label}`}>
+        <p style="margin:0;">{data.fitsRight}</p>
+      </ExamplePanel>
+      <ExamplePanel variant="borderline" label="Could fit both">
+        <p style="margin:0;">{data.fitsBoth}</p>
+      </ExamplePanel>
+      <ExamplePanel variant="non-example" label="Fits neither">
+        <p style="margin:0;">{data.fitsNeither}</p>
+      </ExamplePanel>
+    </section>
+
+    <section class="section-block prose" aria-labelledby="path-h">
+      <h2 id="path-h">A decision path</h2>
+      <ol class="qlist">
+        {data.decisionPath.map((step) => <li>{step}</li>)}
+      </ol>
+    </section>
+
+    <section class="section-block" aria-labelledby="full-h">
+      <h2 id="full-h">Read the full pages</h2>
+      <ul class="qlist">
+        {
+          leftHref && (
+            <li>
+              <a href={leftHref}>{data.left.label}</a>
+            </li>
+          )
+        }
+        {
+          rightHref ? (
+            <li>
+              <a href={rightHref}>{data.right.label}</a>
+            </li>
+          ) : (
+            <li class="text-muted">
+              {data.right.label} is a contrast concept, not one of the 15 project topics.
+            </li>
+          )
+        }
+      </ul>
+    </section>
+  </article>
+</BaseLayout>

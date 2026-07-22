@@ -1,0 +1,6 @@
+# Normalize line endings to LF across platforms.
+* text=auto eol=lf
+
+# Treat these as binary so they are never line-ending-normalized.
+*.png binary
+*.svg text eol=lf

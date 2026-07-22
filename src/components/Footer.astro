@@ -1,0 +1,59 @@
+---
+import { site, withBase } from '../data/site';
+
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="page">
+    <div class="site-footer__grid">
+      <div>
+        <h2>{site.name}</h2>
+        <p class="text-muted">
+          {site.subtitle}. A free, noncommercial classroom reference. No accounts, no ads, no
+          tracking, and no student data — search and practice run entirely in your browser.
+        </p>
+      </div>
+      <nav aria-label="Site">
+        <h2>Explore</h2>
+        <ul>
+          <li><a href={withBase('/')}>All 15 fallacies</a></li>
+          <li><a href={withBase('/compare/')}>Compare</a></li>
+          <li><a href={withBase('/how-arguments-work/')}>How arguments work</a></li>
+          <li><a href={withBase('/project-guide/')}>Project guide</a></li>
+          <li><a href={withBase('/resources/')}>Print &amp; resources</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="About this project">
+        <h2>About</h2>
+        <ul>
+          <li><a href={withBase('/credits/')}>Credits &amp; licensing</a></li>
+          <li><a href={withBase('/privacy/')}>Privacy</a></li>
+          <li><a href={withBase('/accessibility/')}>Accessibility</a></li>
+          <li>
+            <a href={site.repositoryUrl} rel="noopener noreferrer">Source code</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="footer-attribution">
+      <span>
+        Made by
+        <a href={site.ownerUrl} rel="noopener noreferrer">{site.owner}</a>
+      </span>
+      <a class="neon-r" href={site.ownerUrl} rel="noopener noreferrer" aria-label="Rinehart HQ">R</a
+      >
+      <span>·</span>
+      <span>
+        <a href={site.contentLicenseUrl} rel="noopener noreferrer">{site.contentLicense}</a> content ·
+        <a href="https://opensource.org/license/mit" rel="noopener noreferrer">{site.codeLicense}</a
+        > code
+      </span>
+      <span>·</span>
+      <span title={site.publicVersionLabel}>v{site.publicVersion}</span>
+      <span>·</span>
+      <span>© {year}</span>
+    </div>
+  </div>
+</footer>

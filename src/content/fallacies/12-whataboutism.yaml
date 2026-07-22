@@ -1,0 +1,117 @@
+number: 12
+slug: whataboutism
+title: Whataboutism
+shortTitle: Whataboutism
+family: distort-or-dodge
+icon: whataboutism
+aliases:
+  - what about
+  - tu quoque
+  - you too
+  - deflection
+  - two wrongs
+keywords:
+  - what about them
+  - you did it too
+  - deflection
+  - counter-accusation
+  - hypocrisy
+shortDefinition: >-
+  Whataboutism answers criticism by pointing to another person's wrongdoing instead of addressing the original issue.
+carefulDefinition: >-
+  Whataboutism is a form of deflection and often overlaps with "tu quoque," meaning "you too," and with the red herring. The comparison may reveal hypocrisy or inconsistent standards, but that does not erase the original criticism. A fair response can address the first issue and then examine whether the same standard applies elsewhere.
+movePattern:
+  - Person A criticizes action X.
+  - Person B points to action Y by A or someone else.
+  - Person B treats Y as a reason not to answer X.
+whyPersuasive:
+  - It shifts pressure back onto the critic.
+  - It creates a feeling of unfairness.
+  - It turns one question into a contest over who behaved worse.
+clearExamples:
+  - title: The messy lab station
+    text: >-
+      "Why did you leave your lab station messy?" Response: "What about the group beside us? They left paper on the floor."
+    diagnosis:
+      - The question is about this group's responsibility.
+      - The response points to another group's mess.
+      - Another group's behavior does not answer the first group's responsibility.
+    repairedVersion: >-
+      "We left our station messy and will clean it. We should also check that every group is held to the same standard."
+  - title: Late to rehearsal
+    text: >-
+      "Why were you late to rehearsal?" Response: "You were late last Tuesday."
+    diagnosis:
+      - The current question is about today's lateness.
+      - The response raises the critic's past lateness.
+      - The other lateness may matter to fairness, but the current question stands.
+    repairedVersion: >-
+      "I was late today, and I am sorry. If lateness is a problem, let us apply the same rule to everyone, including me."
+nonExample:
+  title: Answer first, then check consistency
+  text: >-
+    "I was late, and that was my responsibility. We should also apply the same attendance rule to everyone, including leaders."
+  explanation: >-
+    This addresses the original criticism before raising a fair consistency point. Asking for equal standards after answering is not the fallacy.
+borderlineCase:
+  title: Selective enforcement
+  text: >-
+    A person points to a comparison because they suspect the rule is being enforced only against them.
+  questions:
+    - Is the comparison being used to test whether the standard is applied fairly?
+    - Or is it being used to avoid answering the original issue?
+    - Was the original criticism ever acknowledged?
+legitimateWhen:
+  - The original issue is acknowledged and answered.
+  - The comparison is relevant to consistent rules or equal treatment.
+  - The speaker does not treat another wrong as an excuse for the first.
+diagnosticQuestions:
+  - What criticism was made first?
+  - Did the response acknowledge it?
+  - What second wrongdoing was introduced?
+  - Does the second issue excuse, explain, or merely distract from the first?
+spotProveRepair:
+  sourceText: >-
+    "Why did your team use an uncited image?" Response: "Other teams used images too."
+  spot: >-
+    This looks like whataboutism.
+  prove:
+    - The question is about your team's uncited image.
+    - The response points to other teams.
+    - Other teams' images do not fix your team's missing citation.
+  repair: >-
+    "We used an uncited image and will add the citation. We can also ask the teacher to apply the citation rule to every team."
+projectLaunchpad:
+  essentialQuestion: >-
+    How does "but what about them?" avoid answering the original question?
+  huntIdeas:
+    - Public interviews where a question is deflected, in neutral form.
+    - Arguments in fiction that trade accusations.
+    - Advertising that answers a criticism by attacking a rival.
+    - Debates that turn into "who is worse" contests.
+  researchQuestions:
+    - What was the first criticism?
+    - Was it acknowledged before the comparison?
+    - What second issue was raised?
+    - Does the second issue answer or dodge the first?
+  productIdeas:
+    - A conversation flowchart showing "Answer first" versus "Point elsewhere."
+    - A rewritten exchange that answers, then checks consistency.
+    - A comparison of a fair consistency point and a pure deflection.
+    - A short skit demonstrating the difference.
+  caution: >-
+    Pointing out inconsistency can be fair. It becomes whataboutism only when it replaces answering the original criticism.
+related:
+  - slug: red-herring
+    relationship: Whataboutism is a specific red herring that deflects toward another person's wrongdoing.
+  - slug: ad-hominem
+    relationship: Both can shift focus to a person, but whataboutism specifically raises a counter-accusation.
+  - slug: guilt-by-association
+    relationship: Both use a comparison or connection to sidestep the actual claim.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Fallacies'
+    url: https://plato.stanford.edu/entries/fallacies/

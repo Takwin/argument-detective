@@ -1,0 +1,16 @@
+---
+interface Props {
+  steps: string[];
+}
+const { steps } = Astro.props;
+---
+
+<ol class="pattern-list">
+  {
+    steps.map((step) => (
+      <li>
+        <span>{step}</span>
+      </li>
+    ))
+  }
+</ol>

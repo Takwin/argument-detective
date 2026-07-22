@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import Icon from '../../components/Icon.astro';
+import FamilyBadge from '../../components/FamilyBadge.astro';
+import PrintButton from '../../components/PrintButton.astro';
+import { getFamily } from '../../data/families';
+import { canonical } from '../../data/site';
+import { getSortedFallacies } from '../../data/fallacies';
+
+const fallacies = await getSortedFallacies();
+---
+
+<BaseLayout
+  title="Printable fallacy cards"
+  description="All 15 fallacies as printable cards, about four per Letter page, legible in grayscale."
+  path="/resources/cards/"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Fallacies', href: '/' },
+      { label: 'Print & Resources', href: '/resources/' },
+      { label: 'Fallacy cards' },
+    ]}
+  />
+
+  <div class="page">
+    <div class="prose" data-print="hide">
+      <h1>Fallacy cards</h1>
+      <p>
+        Fifteen cards for cutting out or projecting. Use your browser’s print dialog and choose
+        “Save as PDF” if you prefer a file. Backgrounds are kept light to save ink.
+      </p>
+      <PrintButton label="Print the cards" />
+    </div>
+
+    <div class="print-card-sheet card-grid" style="margin-top:var(--space-6);">
+      {
+        fallacies.map((f) => {
+          const family = getFamily(f.data.family);
+          return (
+            <article class="fallacy-card print-card">
+              <div class="fallacy-card__top">
+                <span class="fallacy-card__number">#{f.data.number}</span>
+                <span class="fallacy-card__icon">
+                  <Icon name={f.data.icon} size={28} />
+                </span>
+                <FamilyBadge family={f.data.family} />
+              </div>
+              <h2 class="fallacy-card__title" style="font-size:1.2rem;margin:0;">
+                {f.data.title}
+              </h2>
+              <p class="fallacy-card__def" style="margin:0;">
+                {f.data.shortDefinition}
+              </p>
+              <p class="fallacy-card__q" style="margin:0;">
+                Ask: {family.question}
+              </p>
+              <p class="print-card__url" style="margin-top:auto;">
+                {canonical(`/fallacies/${f.data.slug}/`)}
+              </p>
+            </article>
+          );
+        })
+      }
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,116 @@
+number: 13
+slug: appeal-to-tradition
+title: Appeal to Tradition
+shortTitle: Tradition
+family: weak-evidence
+icon: appeal-to-tradition
+aliases:
+  - always done it
+  - old ways
+  - traditional practice
+  - argumentum ad antiquitatem
+keywords:
+  - always
+  - old
+  - custom
+  - the way it has been
+  - heritage
+shortDefinition: >-
+  Appeal to tradition treats a practice as right, best, or necessary mainly because it is old or has always been done.
+carefulDefinition: >-
+  Traditions can preserve identity, meaning, tested knowledge, and community. The fallacy occurs when age alone substitutes for evidence that the practice still serves the current goal or fits current conditions. "We have always done it" is a starting point, not a reason by itself.
+movePattern:
+  - Practice X has existed for a long time.
+  - Therefore X must be correct or must not change.
+whyPersuasive:
+  - Familiar practices feel safe.
+  - Shared history creates belonging.
+  - Change can seem disrespectful or risky.
+clearExamples:
+  - title: The 8:00 start time
+    text: >-
+      "School has always started at 8:00, so any later start time would be wrong."
+    diagnosis:
+      - The only reason offered is the length of the schedule's history.
+      - Age does not settle health, transportation, or learning questions.
+      - Whether the time still serves students is left unexamined.
+    repairedVersion: >-
+      "School has long started at 8:00. Let us compare start times using sleep research, bus schedules, and attendance before deciding."
+  - title: Leaders by applause
+    text: >-
+      "We have always chosen club leaders by the loudest applause, so there is no reason to consider a private vote."
+    diagnosis:
+      - Longevity is treated as proof of fairness.
+      - Loud applause may favor confidence over qualifications.
+      - The method's actual results are never evaluated.
+    repairedVersion: >-
+      "We have always used applause. Let us compare it with a private vote to see which better reflects the group's real choice."
+nonExample:
+  title: Tradition as the actual goal
+  text: >-
+    "We make the same family dish each year because preserving that shared tradition is one purpose of the celebration."
+  explanation: >-
+    When continuity and shared meaning are the stated goals, tradition is directly relevant. Keeping a tradition because the tradition itself matters is not the fallacy.
+borderlineCase:
+  title: A long-used safety procedure
+  text: >-
+    A safety procedure has been used for many years and rarely questioned.
+  questions:
+    - Does its long use reflect tested experience, or just habit?
+    - Have conditions changed since it was adopted?
+    - Have better alternatives been compared against it?
+legitimateWhen:
+  - Preserving the tradition is itself a legitimate goal.
+  - Long use provides evidence of reliability and conditions remain similar.
+  - The practice is supported by additional reasons beyond its age.
+  - The speaker remains willing to test and revise it.
+diagnosticQuestions:
+  - Is age the only reason given?
+  - What goal does the tradition serve?
+  - Does the practice still achieve that goal?
+  - Have circumstances or evidence changed?
+spotProveRepair:
+  sourceText: >-
+    "We have always printed every handout, so digital copies cannot be better."
+  spot: >-
+    This looks like an appeal to tradition.
+  prove:
+    - The reason offered is that printing is the long-standing practice.
+    - Age does not show that printing still serves students best.
+    - Access, cost, and learning needs are never compared.
+  repair: >-
+    "We have always printed handouts. Let us compare printed and digital copies on access, learning needs, cost, and environmental effect."
+projectLaunchpad:
+  essentialQuestion: >-
+    When is "we have always done it" a real reason, and when is it standing in for evidence?
+  huntIdeas:
+    - School or club customs defended by their age.
+    - Advertisements calling a product "the original" or "time-tested."
+    - Fictional communities that resist change.
+    - Everyday "that is just how it is done" claims.
+  researchQuestions:
+    - How long has the practice existed?
+    - What goal was it meant to serve?
+    - Does it still serve that goal today?
+    - What evidence supports keeping or changing it?
+  productIdeas:
+    - A comparison of one tradition worth preserving and one practice worth revising, using the same questions.
+    - A rewritten claim that adds evidence beyond age.
+    - A timeline showing how conditions changed around a practice.
+    - A short presentation weighing continuity against current needs.
+  caution: >-
+    Traditions are not automatically bad. The fallacy is using age alone as proof, not valuing a tradition for good reasons.
+related:
+  - slug: bandwagon
+    relationship: Bandwagon appeals to how many do it now; tradition appeals to how long it has been done.
+  - slug: appeal-to-authority
+    relationship: Both borrow credibility, one from age and one from a high-status source, instead of from evidence.
+  - slug: false-dilemma
+    relationship: Tradition arguments sometimes pair with a false dilemma between "keep it exactly" and "lose it entirely."
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'UNC Writing Center: Fallacies'
+    url: https://writingcenter.unc.edu/tips-and-tools/fallacies/

@@ -1,0 +1,118 @@
+number: 9
+slug: false-cause
+title: Post Hoc and False Cause
+shortTitle: False Cause
+family: unsupported-leap
+icon: false-cause
+aliases:
+  - post hoc
+  - correlation is not causation
+  - causal fallacy
+  - after this therefore because of this
+keywords:
+  - cause
+  - correlation
+  - happened first
+  - coincidence
+  - because of this
+shortDefinition: >-
+  False-cause reasoning assumes that one event caused another without enough evidence, often because the events happened together or one happened first.
+carefulDefinition: >-
+  False Cause is the broad category, and Post Hoc is one common form. Sequence and correlation can provide clues, but they do not settle causation. A causal claim needs evidence that rules out coincidence, reverse causation, shared causes, and other explanations. "Post hoc ergo propter hoc" means roughly "after this, therefore because of this."
+movePattern:
+  - A happened before B, so A caused B.
+  - A and B occur together, so A caused B.
+  - A third factor C that could influence both is ignored.
+whyPersuasive:
+  - Human minds naturally search for patterns and explanations.
+  - A single cause is easier to remember than several interacting factors.
+  - A story with a clear cause feels satisfying.
+clearExamples:
+  - title: The lucky socks
+    text: >-
+      "I wore my lucky socks, and then our team won, so the socks caused the victory."
+    diagnosis:
+      - The only link offered is that the socks came before the win.
+      - Sequence alone does not establish a mechanism.
+      - Player performance, strategy, and chance are all ignored.
+    repairedVersion: >-
+      "We won while I wore those socks. That is a coincidence unless the socks somehow affected play, so the credit belongs to preparation and performance."
+  - title: The garden and the scores
+    text: >-
+      "The school planted a garden in September, and reading scores rose in spring, so the garden caused the increase."
+    diagnosis:
+      - Two events are connected only by timing.
+      - Many other changes during the year could explain the scores.
+      - No mechanism links a garden directly to reading gains.
+    repairedVersion: >-
+      "Reading scores rose after the garden was planted. To claim a cause, we would need to rule out other changes and test the effect carefully."
+nonExample:
+  title: A controlled comparison
+  text: >-
+    "The class compared similar plants, changed only the amount of light, repeated the trial, and consistently found slower growth in the low-light group."
+  explanation: >-
+    Controlled, repeated evidence that rules out other explanations can support a causal conclusion. Careful cause-and-effect reasoning is not the fallacy.
+borderlineCase:
+  title: Sleep and grades
+  text: >-
+    Students who sleep more often earn higher grades.
+  questions:
+    - Could sleep help learning, or could the causation run the other way?
+    - Could schedules, health, or study habits affect both sleep and grades?
+    - Is this correlation a starting point for investigation rather than proof?
+legitimateWhen:
+  - A mechanism connects the cause and the effect.
+  - Controlled or carefully designed evidence rules out alternatives.
+  - The claim uses cautious language such as "may contribute."
+  - Multiple forms of evidence point in the same direction.
+diagnosticQuestions:
+  - Did the supposed cause actually happen before the effect?
+  - Could the direction run the other way?
+  - Could a third factor cause both?
+  - Was the relationship repeated or controlled?
+  - Is the claim stronger than the evidence?
+spotProveRepair:
+  sourceText: >-
+    "I changed my pencil and then solved the problem, so the pencil made me better at math."
+  spot: >-
+    This looks like a false-cause claim.
+  prove:
+    - The only connection is that the new pencil came before the success.
+    - Practice, the specific problem, or focus could explain it instead.
+    - One sequence is not evidence of a cause.
+  repair: >-
+    "I solved the problem after switching pencils. Let me repeat the comparison and consider other changes before claiming the pencil helped."
+projectLaunchpad:
+  essentialQuestion: >-
+    How do we tell a real cause from two things that just happened together?
+  huntIdeas:
+    - Superstitions and lucky-charm stories.
+    - Advertisements claiming a product caused a result.
+    - Headlines that turn a correlation into a cause.
+    - Everyday "ever since I started X" explanations.
+  researchQuestions:
+    - What is the claimed cause and effect?
+    - Did the cause clearly come first?
+    - What other explanations are possible?
+    - Was the relationship tested or controlled?
+  productIdeas:
+    - A causation-detective board with sequence, correlation, mechanism, alternative causes, and evidence needed.
+    - A rewritten claim that softens an overstated cause.
+    - A diagram of a third factor influencing both events.
+    - A short experiment testing a simple cause-and-effect idea.
+  caution: >-
+    Correlation is a real clue, not nothing. The fallacy is treating "together" or "after" as proof of "because."
+related:
+  - slug: slippery-slope
+    relationship: False cause misjudges a link that already happened; slippery slope predicts a future chain of links.
+  - slug: anecdotal-fallacy
+    relationship: A single story often carries a hidden false-cause claim about what produced an outcome.
+  - slug: hasty-generalization
+    relationship: Both leap past the evidence, one to a cause and one to a broad conclusion.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Fallacies'
+    url: https://plato.stanford.edu/entries/fallacies/

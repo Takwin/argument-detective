@@ -1,0 +1,36 @@
+slug: false-cause-vs-slippery-slope
+order: 5
+left:
+  label: False Cause
+  slug: false-cause
+right:
+  label: Slippery Slope
+  slug: slippery-slope
+distinction: >-
+  False cause wrongly explains an observed relationship; slippery slope predicts an unsupported chain of future consequences.
+rows:
+  - question: Time focus
+    left: Often explains what already happened
+    right: Often predicts what will happen next
+  - question: Structure
+    left: A caused B without enough evidence
+    right: A will cause B, then C, then disaster Z
+  - question: Key test
+    left: Alternatives, mechanism, and controls
+    right: Evidence and probability for each link
+  - question: Repair
+    left: Rule out other explanations before claiming a cause
+    right: Show evidence for each step, or lower the certainty
+fitsLeft: >-
+  "Reading scores rose after we changed the bell schedule, so the schedule raised the scores." A past relationship is explained by one cause.
+fitsRight: >-
+  "If we move the bell five minutes, soon the whole timetable will collapse." A future chain is predicted without support.
+fitsBoth: >-
+  "One flexible deadline caused lower effort, and if we allow another, all deadlines will soon disappear." The past cause may be unsupported and the future chain may be too.
+fitsNeither: >-
+  A carefully supported causal model with realistic probabilities and named safeguards.
+decisionPath:
+  - Is the claim about a past relationship or a future chain?
+  - For a cause, were alternatives and mechanism checked?
+  - For a chain, does each link have evidence and a real probability?
+  - Is the certainty stronger than the evidence allows?

@@ -1,0 +1,115 @@
+number: 7
+slug: circular-reasoning
+title: Circular Reasoning
+shortTitle: Circular
+family: unsupported-leap
+icon: circular-reasoning
+aliases:
+  - begging the question
+  - conclusion in premise
+  - restated claim
+keywords:
+  - assumes the conclusion
+  - restates
+  - goes in a circle
+  - no outside evidence
+  - self-proving
+shortDefinition: >-
+  Circular reasoning uses the conclusion itself, restated or assumed, as the reason for believing the conclusion.
+carefulDefinition: >-
+  An argument is circular when its support cannot be accepted without already accepting what the argument is trying to prove. Sometimes the conclusion is repeated in different words. Sometimes a hidden premise quietly assumes it. Either way, the reasoning never reaches independent evidence.
+movePattern:
+  - Claim X is true.
+  - Give a reason that means "X is true" or depends on X already being true.
+  - Return to X without any independent support.
+whyPersuasive:
+  - Rephrasing a claim can sound like explaining it.
+  - Familiar assumptions may slip by unnoticed.
+  - Repetition creates a feeling of certainty.
+clearExamples:
+  - title: The best captain
+    text: >-
+      "I should be team captain because I am the best choice for captain. I know I am the best choice because I should be captain."
+    diagnosis:
+      - The reason for being captain is being the best choice.
+      - The reason for being the best choice is that they should be captain.
+      - No independent qualifications, such as leadership or attendance, are supplied.
+    repairedVersion: >-
+      "I should be captain because I have led three successful projects, resolve conflicts calmly, and attend every practice."
+  - title: The self-certifying website
+    text: >-
+      "This website is always accurate because its own About page says everything on the website is accurate."
+    diagnosis:
+      - The claim is that the site is accurate.
+      - The evidence is the site's own statement that it is accurate.
+      - The source is being used to prove its own reliability.
+    repairedVersion: >-
+      "To judge whether the website is accurate, let us check its claims against independent sources and see whether experts confirm them."
+nonExample:
+  title: Independent reasons
+  text: >-
+    "Nora is a strong captain candidate because she has led three successful projects, resolves conflicts calmly, and attends every practice."
+  explanation: >-
+    These reasons can be checked without already assuming the conclusion. A separate case is a definition, not an argument: "A triangle has three sides because a triangle is defined as a three-sided polygon" explains a meaning rather than trying to prove an uncertain claim.
+borderlineCase:
+  title: A system with internal cross-checks
+  text: >-
+    A trusted system claims to be reliable because its own internal checks agree with each other.
+  questions:
+    - Is the supporting information genuinely independent of the claim?
+    - Or is each "check" just another form of the same statement?
+    - What outside evidence would break the circle if it exists?
+legitimateWhen:
+  - A statement is giving a definition rather than proving an uncertain claim.
+  - Several premises support each other within a larger network that also connects to independent evidence.
+  - The goal is clarification rather than proof.
+diagnosticQuestions:
+  - Could a person accept the reason without already accepting the conclusion?
+  - Is the reason merely a synonym or restatement of the claim?
+  - What outside evidence would break the circle?
+  - Is this an argument at all, or simply a definition?
+spotProveRepair:
+  sourceText: >-
+    "The new rule is fair because it is a fair rule for everyone."
+  spot: >-
+    This looks like circular reasoning.
+  prove:
+    - The claim is that the rule is fair.
+    - The reason restates that the rule is fair.
+    - No independent standard of fairness is offered.
+  repair: >-
+    "Let us define what fairness means here and show evidence about how the rule treats different groups and situations."
+projectLaunchpad:
+  essentialQuestion: >-
+    How can an argument sound like proof while never leaving the circle of its own claim?
+  huntIdeas:
+    - Slogans and mottos that restate themselves.
+    - Reviews or ads that call a product "the best because it is the best."
+    - Rules justified only by repeating the rule.
+    - Fictional characters who argue in circles.
+  researchQuestions:
+    - What is the exact conclusion?
+    - What reason is given for it?
+    - Does the reason simply restate or assume the conclusion?
+    - What independent evidence would be needed?
+  productIdeas:
+    - A diagram of arrows that loop back without reaching evidence.
+    - A "break the circle" activity that adds an independent evidence branch.
+    - A before-and-after showing a restatement replaced by real reasons.
+    - A short skit exposing a circular claim.
+  caution: >-
+    Not every weakly supported claim is circular. Circular reasoning specifically reuses the conclusion as its own support.
+related:
+  - slug: appeal-to-authority
+    relationship: A self-certifying source is circular; an appeal to authority borrows an outside source's status.
+  - slug: bandwagon
+    relationship: Both can feel like proof without independent evidence, one by repetition and one by popularity.
+  - slug: hasty-generalization
+    relationship: Circular reasoning reuses the conclusion; hasty generalization jumps to it from too little evidence.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Informal Logic'
+    url: https://plato.stanford.edu/entries/logic-informal/

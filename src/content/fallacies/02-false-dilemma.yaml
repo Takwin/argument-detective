@@ -1,0 +1,116 @@
+number: 2
+slug: false-dilemma
+title: False Dilemma
+shortTitle: False Dilemma
+family: manipulate-frame
+icon: false-dilemma
+aliases:
+  - false dichotomy
+  - either-or
+  - black-or-white
+  - two choices
+keywords:
+  - only two options
+  - either or
+  - missing alternatives
+  - forced choice
+  - binary
+shortDefinition: >-
+  A false dilemma presents two choices as if they are the only possibilities when other reasonable options exist.
+carefulDefinition: >-
+  The argument frames a situation as "A or B" and pressures the audience to choose, even though the choices may not be exhaustive, mutually exclusive, or the only practical options. The flaw is not simply that the speaker mentions two choices. It is that the conclusion depends on pretending no meaningful alternative exists.
+movePattern:
+  - Present option A and option B.
+  - Hide or dismiss options C, D, or combinations of them.
+  - Make one visible option look unavoidable.
+whyPersuasive:
+  - Binary choices are easy to understand and remember.
+  - Two stark options create urgency and pressure to decide quickly.
+  - Framing can make disagreement look like support for the worst alternative.
+clearExamples:
+  - title: Phones all day or never
+    text: >-
+      "Either we ban phones for the entire school day, or students will never pay attention in class."
+    diagnosis:
+      - Only a total ban and total distraction are offered.
+      - Partial limits, class-by-class rules, phone storage, and enforcement options are ignored.
+      - The conclusion depends on pretending nothing in between is possible.
+    repairedVersion: >-
+      "Phone use is hurting attention in some classes. Let us compare a full-day ban with class-time-only rules and shared storage, then look at which one improves focus."
+  - title: Cancel or charge everyone
+    text: >-
+      "The club can either cancel the trip or charge every student one hundred dollars."
+    diagnosis:
+      - Two expensive-sounding options are presented as the whole list.
+      - Fundraising, a shorter trip, subsidies, donations, or a different destination are excluded without discussion.
+      - The audience is pushed to accept a fee to avoid losing the trip.
+    repairedVersion: >-
+      "The trip currently costs more than our budget. Before we cancel or charge families, let us price a shorter trip, a fundraiser, and a nearer destination."
+nonExample:
+  title: A genuine two-option schedule
+  text: >-
+    "The contest rules require each team to choose either the morning round or the afternoon round, and the schedule has no third session."
+  explanation: >-
+    Here the two options really are the only ones, because the rules and schedule create a true binary. Naming two choices is only a fallacy when other reasonable options are hidden.
+borderlineCase:
+  title: A budget that covers one purchase
+  text: >-
+    "We can buy the robot kit or the 3D printer, because the budget covers only one this year."
+  questions:
+    - Do the budget and timing really exclude combinations, borrowing, or a later purchase?
+    - Is "only one this year" a true constraint or an assumption worth checking?
+    - Could a smaller version of each choice fit the budget together?
+legitimateWhen:
+  - The options truly are exhaustive.
+  - Rules, physical facts, or a fixed budget create a real binary.
+  - The speaker clearly says these are the two practical options currently on the table, not the only imaginable ones.
+diagnosticQuestions:
+  - What choices were named in the argument?
+  - What realistic choices or combinations were left out?
+  - Are the two options genuinely exhaustive?
+  - Does the argument pressure people by making one option sound disloyal, foolish, or disastrous?
+spotProveRepair:
+  sourceText: >-
+    "Either the library removes all games, or it does not care about reading."
+  spot: >-
+    This looks like a false dilemma.
+  prove:
+    - Only two extremes are offered — remove every game or ignore reading entirely.
+    - Time limits, designated zones, and specific rules are all left out.
+    - Caring about reading and keeping some games can both be true at once.
+  repair: >-
+    "Some students spend library time only on games. Let us gather data on game use and try time limits or a games zone before deciding to remove anything."
+projectLaunchpad:
+  essentialQuestion: >-
+    How does hiding the middle options make one choice look like the only choice?
+  huntIdeas:
+    - Advertisements and slogans that offer "this or nothing."
+    - Headlines that reduce a complex issue to two sides.
+    - School-rule debates framed as all-or-nothing.
+    - Fictional dialogue where a character forces a choice.
+  researchQuestions:
+    - What were the two named options?
+    - What third options or combinations were left out?
+    - Are the two options really exclusive, or could both happen?
+    - How does the framing pressure the listener?
+  productIdeas:
+    - A "missing-options" map that adds choices C, D, and E.
+    - A rewritten slogan that shows the hidden third path.
+    - A decision chart comparing several realistic options.
+    - A short skit where a character breaks a forced choice.
+  caution: >-
+    Some choices really are binary. Show that a reasonable third option was available before calling it a false dilemma.
+related:
+  - slug: straw-man
+    relationship: A straw man changes the opponent's position; a false dilemma changes the range of available choices.
+  - slug: appeal-to-emotion
+    relationship: A false dilemma boxes in the options; an appeal to emotion pushes with feeling. They often work together.
+  - slug: slippery-slope
+    relationship: A slippery slope predicts a runaway chain; a false dilemma erases the middle ground between two ends.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'UNC Writing Center: Fallacies'
+    url: https://writingcenter.unc.edu/tips-and-tools/fallacies/

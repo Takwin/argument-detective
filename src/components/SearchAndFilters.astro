@@ -1,0 +1,54 @@
+---
+import { families } from '../data/families';
+import Icon from './Icon.astro';
+
+interface Props {
+  count: number;
+}
+const { count } = Astro.props;
+---
+
+<section class="search-panel" data-search-root aria-label="Search and filter fallacies">
+  <label class="eyebrow" for="fallacy-search" id="search-label">Search the 15 fallacies</label>
+  <div class="search-field">
+    <input
+      type="search"
+      id="fallacy-search"
+      name="q"
+      placeholder='Try a title, alias, or keyword — like "expert" or "what about"'
+      autocomplete="off"
+      aria-describedby="search-hint"
+      data-search-input
+    />
+    <button type="button" class="search-clear" hidden data-search-clear>
+      <Icon name="close" size={18} />
+      <span class="visually-hidden">Clear search</span>
+    </button>
+  </div>
+  <p id="search-hint" class="visually-hidden">
+    Results update as you type. Filtering happens in your browser and is not saved or sent anywhere.
+  </p>
+
+  <fieldset class="filter-row" data-js-only hidden>
+    <legend class="eyebrow" style="padding:0;">Filter by family</legend>
+    {
+      families.map((family) => (
+        <span class="filter-chip">
+          <input type="checkbox" id={`filter-${family.id}`} value={family.id} data-family-filter />
+          <label for={`filter-${family.id}`}>{family.label}</label>
+        </span>
+      ))
+    }
+    <button type="button" class="btn btn-secondary" data-clear-all style="min-height:40px;">
+      Clear all
+    </button>
+  </fieldset>
+
+  <p class="results-status" data-results-status role="status" aria-live="polite">
+    All {count} fallacies
+  </p>
+</section>
+
+<script>
+  import '../scripts/search.ts';
+</script>

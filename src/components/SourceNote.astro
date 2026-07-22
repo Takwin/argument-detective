@@ -1,0 +1,75 @@
+---
+interface SourceNoteData {
+  title: string;
+  creator: string;
+  url: string;
+  license: string;
+  licenseUrl: string;
+  changes: string;
+}
+interface Props {
+  status: 'original' | 'adapted' | 'mixed';
+  notes: SourceNoteData[];
+  furtherReading: Array<{ label: string; url: string }>;
+}
+const { status, notes, furtherReading } = Astro.props;
+
+const statusLabel = {
+  original: 'Original to this project',
+  adapted: 'Adapted from a licensed source',
+  mixed: 'Mixed: original with adapted portions',
+}[status];
+---
+
+<div class="stack">
+  <p>
+    <strong>Content status:</strong>
+    {statusLabel}. This page's explanations, examples, non-example, borderline case, and repair
+    activity were written for Argument Detective.
+  </p>
+
+  {
+    notes.length > 0 && (
+      <div class="stack">
+        <h3>Attribution</h3>
+        {notes.map((note) => (
+          <div class="callout callout--note">
+            <p style="margin:0 0 var(--space-1);">
+              <strong>{note.title}</strong> by {note.creator}
+            </p>
+            <p style="margin:0 0 var(--space-1);">
+              Source:{' '}
+              <a href={note.url} rel="noopener noreferrer">
+                {note.url}
+              </a>
+            </p>
+            <p style="margin:0 0 var(--space-1);">
+              License:{' '}
+              <a href={note.licenseUrl} rel="noopener noreferrer">
+                {note.license}
+              </a>
+            </p>
+            <p style="margin:0;">Changes: {note.changes}. No endorsement is implied.</p>
+          </div>
+        ))}
+      </div>
+    )
+  }
+
+  {
+    furtherReading.length > 0 && (
+      <div>
+        <h3>Sources and further reading</h3>
+        <ul class="qlist">
+          {furtherReading.map((item) => (
+            <li>
+              <a href={item.url} rel="noopener noreferrer">
+                {item.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    )
+  }
+</div>

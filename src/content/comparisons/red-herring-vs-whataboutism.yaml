@@ -1,0 +1,36 @@
+slug: red-herring-vs-whataboutism
+order: 2
+left:
+  label: Red Herring
+  slug: red-herring
+right:
+  label: Whataboutism
+  slug: whataboutism
+distinction: >-
+  A red herring is any distracting irrelevant issue; whataboutism is a specific deflection that points to another person's wrongdoing or inconsistency.
+rows:
+  - question: New topic
+    left: Any distracting issue
+    right: Another wrongdoing, hypocrisy, or comparison
+  - question: Typical wording
+    left: May have no "what about" phrase
+    right: Often "What about them?" or "You did it too"
+  - question: Original issue answered?
+    left: Usually no
+    right: Usually no
+  - question: Can the comparison be relevant?
+    left: Sometimes, if it adds needed context
+    right: Yes, for consistency, after the first issue is answered
+fitsLeft: >-
+  Asked about a product's safety, a company talks about its charity work instead.
+fitsRight: >-
+  Asked why a rule was broken, a student points out that another student broke it too.
+fitsBoth: >-
+  Whataboutism is often a red-herring subtype, because pointing to someone else's wrongdoing also changes the subject.
+fitsNeither: >-
+  "I broke the rule and will correct it. We should also check whether the rule is enforced equally."
+decisionPath:
+  - What was the original question or criticism?
+  - Did the response answer it before changing topics?
+  - Is the new topic another person's wrongdoing specifically?
+  - Is the comparison being used for fairness or for avoidance?

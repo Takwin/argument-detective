@@ -1,0 +1,35 @@
+slug: circular-reasoning-vs-weak-evidence
+order: 6
+left:
+  label: Circular Reasoning
+  slug: circular-reasoning
+right:
+  label: Weak or Missing Evidence
+distinction: >-
+  Circular reasoning gives a reason that assumes or restates the conclusion; weak evidence is independent of the conclusion but simply not strong enough.
+rows:
+  - question: Is the reason independent of the conclusion?
+    left: No, it reuses the conclusion
+    right: Usually yes, but it is inadequate
+  - question: Example
+    left: 'It is reliable because it can be relied upon.'
+    right: 'It is reliable because one person liked it.'
+  - question: What the argument is missing
+    left: Any support outside the claim itself
+    right: Enough relevant, sufficient support
+  - question: Repair
+    left: Add genuinely independent evidence
+    right: Add more relevant and sufficient evidence
+fitsLeft: >-
+  "This rule is the best because no better rule exists, and we know no better rule exists because this one is the best."
+fitsRight: >-
+  "This rule is best because one student said so." The reason is independent but far too thin.
+fitsBoth: >-
+  An argument can restate its conclusion once and then add a single weak reason, showing traces of each problem.
+fitsNeither: >-
+  "The rule improved the stated outcome across several comparable trials and produced fewer side effects than the alternatives."
+decisionPath:
+  - Does the reason stand on its own, or does it reuse the conclusion?
+  - If it is independent, is it relevant to the claim?
+  - Is there enough of it for a conclusion this broad?
+  - What additional evidence would strengthen the argument?

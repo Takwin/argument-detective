@@ -1,0 +1,115 @@
+number: 3
+slug: slippery-slope
+title: Slippery Slope
+shortTitle: Slippery Slope
+family: unsupported-leap
+icon: slippery-slope
+aliases:
+  - domino effect
+  - chain reaction
+  - inevitable disaster
+keywords:
+  - one step
+  - chain of events
+  - inevitable
+  - extreme outcome
+  - links
+shortDefinition: >-
+  A slippery-slope argument claims that one step will trigger a chain ending in an extreme result without enough support for the links.
+carefulDefinition: >-
+  Predicting consequences is not automatically fallacious. The problem occurs when an argument treats a long sequence as inevitable or highly likely without evidence for each important transition. The disaster at the end does the persuading, while the links in the middle go untested.
+movePattern:
+  - Allow or do action A.
+  - Assert that A will lead to B, then C, then an extreme outcome Z.
+  - Reject A mainly because Z would be unacceptable.
+whyPersuasive:
+  - The final disaster is vivid and easy to picture.
+  - Fear narrows attention to the worst case.
+  - Listeners may not stop to test whether each link is likely.
+clearExamples:
+  - title: One late assignment
+    text: >-
+      "If the teacher accepts one late assignment, soon every deadline will become optional and no one will finish work on time."
+    diagnosis:
+      - The argument jumps from one accepted late paper to total collapse of deadlines.
+      - No evidence supports the steps between the exception and the disaster.
+      - A single flexible case does not make every deadline meaningless.
+    repairedVersion: >-
+      "Accepting one late assignment could reduce urgency for some students. Let us try a clear late policy with limits and see whether on-time work actually drops."
+  - title: Hats on spirit day
+    text: >-
+      "If students can wear hats on spirit days, uniforms will disappear and school rules will become meaningless."
+    diagnosis:
+      - The intermediate steps from one hat day to no rules are assumed, not shown.
+      - Each transition is treated as certain without any support.
+      - A limited exception can exist without erasing every rule.
+    repairedVersion: >-
+      "Allowing hats on spirit days is a limited change. Let us define exactly when hats are allowed and review whether other rules stay clear."
+nonExample:
+  title: A supported causal chain
+  text: >-
+    "If this plant receives no water for several weeks, its cells will lose water, the leaves will wilt, and the plant may die."
+  explanation: >-
+    Each link here is supported by a known mechanism and evidence, and the conclusion uses cautious wording. A well-supported chain of consequences is not a slippery slope.
+borderlineCase:
+  title: A rule that shifts incentives
+  text: >-
+    A proposed rule could create incentives that gradually change how students behave over a semester.
+  questions:
+    - Is there evidence for each step, or only for the first one?
+    - How probable is each transition, not just how possible?
+    - Could limits or safeguards stop the chain before the extreme outcome?
+legitimateWhen:
+  - Each link is supported by evidence or a clear mechanism.
+  - The conclusion is expressed with an appropriate level of uncertainty.
+  - Historical examples and relevant differences are actually analyzed.
+diagnosticQuestions:
+  - What are the steps between the first action and the final outcome?
+  - Is each step possible, probable, or merely imaginable?
+  - Is the conclusion described as inevitable without evidence?
+  - Could limits or safeguards stop the chain?
+spotProveRepair:
+  sourceText: >-
+    "If we let students redo one quiz, next they will demand to redo every assignment until grades mean nothing."
+  spot: >-
+    This looks like a slippery slope.
+  prove:
+    - The argument moves from one quiz redo to redoing everything to meaningless grades.
+    - No evidence supports the jump from one redo to unlimited redos.
+    - A defined one-redo policy is not the same as no rules at all.
+  repair: >-
+    "Let us test a one-redo policy with clear conditions and a deadline, then check whether students actually stop doing work on time."
+projectLaunchpad:
+  essentialQuestion: >-
+    When is a chain of consequences supported evidence, and when is it just fear of the worst case?
+  huntIdeas:
+    - Debates over new school or club rules.
+    - Advertisements warning about what will happen without the product.
+    - Fictional stories where one choice supposedly dooms everything.
+    - Public discussions about a proposed change, in neutral form.
+  researchQuestions:
+    - What is the first step in the chain?
+    - What is the final feared outcome?
+    - Which links have evidence and which do not?
+    - How certain does the speaker sound compared with the evidence?
+  productIdeas:
+    - A domino-chain visual labeling each link supported, uncertain, or unsupported.
+    - A side-by-side of a defensible chain and a fallacious one.
+    - A "safeguard" diagram showing where the chain could be stopped.
+    - A short narrated slideshow testing each transition.
+  caution: >-
+    A chain of consequences is not automatically a slippery slope. Judge the evidence for each link, not just the scary ending.
+related:
+  - slug: false-cause
+    relationship: False cause misjudges a cause that already happened; slippery slope predicts a future chain without support.
+  - slug: appeal-to-emotion
+    relationship: A slippery slope often relies on fear of the final outcome, which links it to appeals to emotion.
+  - slug: false-dilemma
+    relationship: A false dilemma erases the middle options; a slippery slope claims the middle steps happen automatically.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Stanford Encyclopedia of Philosophy: Fallacies'
+    url: https://plato.stanford.edu/entries/fallacies/

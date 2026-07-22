@@ -1,0 +1,117 @@
+number: 6
+slug: appeal-to-emotion
+title: Appeal to Emotion
+shortTitle: Emotion
+family: manipulate-frame
+icon: appeal-to-emotion
+aliases:
+  - fear
+  - pity
+  - guilt
+  - pride
+  - emotional manipulation
+keywords:
+  - feelings
+  - fear
+  - guilt
+  - sympathy
+  - pressure
+shortDefinition: >-
+  An appeal to emotion becomes fallacious when feelings are used in place of the reasons or evidence needed to support the conclusion.
+carefulDefinition: >-
+  Good arguments can involve fear, hope, empathy, anger, pride, or sadness. The problem is not feeling. The problem is emotional pressure that hides missing evidence, distorts the choice, or pushes the audience to accept a conclusion for reasons unrelated to whether it is true or wise.
+movePattern:
+  - Trigger a strong feeling.
+  - Connect that feeling to a desired conclusion.
+  - Leave the relevant evidence or comparison unstated.
+whyPersuasive:
+  - Emotion captures attention quickly.
+  - Strong feelings speed up decisions.
+  - Questioning the claim can be made to feel uncaring or disloyal.
+clearExamples:
+  - title: The dog-food guilt trip
+    text: >-
+      "Buy this premium dog food, or imagine how sad your dog will feel when it sees another bowl."
+    diagnosis:
+      - The ad triggers guilt and an imagined reaction.
+      - No nutritional evidence about the food is offered.
+      - The feeling is doing the work that facts should do.
+    repairedVersion: >-
+      "Compare the nutrition labels and any independent reviews, then decide whether this food is worth its price for your dog."
+  - title: Effort as an argument
+    text: >-
+      "Approve my club proposal because I worked on it all weekend and I will be crushed if it fails."
+    diagnosis:
+      - Effort and disappointment are offered as reasons to approve.
+      - Neither shows that the proposal is affordable or effective.
+      - The emotional cost replaces evidence about the plan.
+    repairedVersion: >-
+      "I worked hard on this proposal, and I hope it passes. Here is the budget, the plan, and the expected benefit so you can judge it fairly."
+nonExample:
+  title: A relevant emotional stake with evidence
+  text: >-
+    "The evacuation plan could prevent serious injuries. Here are the building data, expert recommendations, and examples from similar schools."
+  explanation: >-
+    The possibility of injury is both emotional and relevant, and real evidence supports the claim. Emotion plus evidence about the actual issue is not the fallacy.
+borderlineCase:
+  title: One child's story plus audited results
+  text: >-
+    A charity tells one child's story and also provides audited evidence about the program's outcomes.
+  questions:
+    - Is the story helping people understand the stakes or replacing the evidence?
+    - Would the claim still stand on the audited results alone?
+    - Is the audience free to question the program without being called cruel?
+legitimateWhen:
+  - The emotional consequence is part of the real issue.
+  - Evidence accompanies the emotional appeal.
+  - The conclusion is about values or priorities, and those values are stated openly.
+diagnosticQuestions:
+  - What feeling is being triggered?
+  - What evidence would be needed without that feeling?
+  - Is the emotional fact relevant to the conclusion?
+  - Is questioning the claim framed as cruel, fearful, or disloyal?
+spotProveRepair:
+  sourceText: >-
+    "Choose our fundraiser because the team will be heartbroken if you do not."
+  spot: >-
+    This looks like an appeal to emotion.
+  prove:
+    - The reason offered is the team's heartbreak, not the fundraiser's merit.
+    - No goal, budget, or expected benefit is given.
+    - Sympathy is being asked to stand in for evidence.
+  repair: >-
+    "Our team really hopes you will choose this fundraiser. Here is the goal, the budget, the plan, and what the money would accomplish."
+projectLaunchpad:
+  essentialQuestion: >-
+    When is a feeling part of the real reason, and when is it hiding the missing evidence?
+  huntIdeas:
+    - Charity and public-service advertisements.
+    - Product ads built on fear or guilt.
+    - Persuasive speeches in fiction or approved public media.
+    - Fundraising or campaign messages, in neutral form.
+  researchQuestions:
+    - What emotion is the message designed to trigger?
+    - What evidence is present, and what is missing?
+    - Is the emotional fact actually relevant to the claim?
+    - How would the argument read with the feeling removed?
+  productIdeas:
+    - Two versions of one ad — emotion only, and emotion plus evidence.
+    - An annotated speech marking feeling and fact in different colors.
+    - A "what's the evidence?" overlay for a real advertisement.
+    - A short skit that pauses to ask for the missing reasons.
+  caution: >-
+    Emotion is not automatically dishonest. Show that the feeling is standing in for evidence the argument actually needs.
+related:
+  - slug: false-dilemma
+    relationship: Both control the frame; a false dilemma limits the choices while an appeal to emotion pressures the feeling.
+  - slug: slippery-slope
+    relationship: A slippery slope often uses fear of the final outcome to persuade.
+  - slug: anecdotal-fallacy
+    relationship: A vivid personal story can carry emotional weight that replaces broader evidence.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Purdue OWL: Logical Fallacies'
+    url: https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html

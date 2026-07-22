@@ -1,0 +1,196 @@
+---
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import FamilyBadge from '../../components/FamilyBadge.astro';
+import Icon from '../../components/Icon.astro';
+import PatternBlock from '../../components/PatternBlock.astro';
+import ExamplePanel from '../../components/ExamplePanel.astro';
+import DiagnosticQuestions from '../../components/DiagnosticQuestions.astro';
+import SpotProveRepair from '../../components/SpotProveRepair.astro';
+import ProjectLaunchpad from '../../components/ProjectLaunchpad.astro';
+import RelatedTopics from '../../components/RelatedTopics.astro';
+import SourceNote from '../../components/SourceNote.astro';
+import Callout from '../../components/Callout.astro';
+import PrintButton from '../../components/PrintButton.astro';
+import { withBase } from '../../data/site';
+import { getFamily } from '../../data/families';
+import { FALLACY_FALLACY_SAFEGUARD } from '../../data/glossary';
+import { getSortedFallacies, getPrevNext, bySlugMap } from '../../data/fallacies';
+
+export const getStaticPaths = (async () => {
+  const fallacies = await getSortedFallacies();
+  const slugMap = bySlugMap(fallacies);
+
+  return fallacies.map((entry) => {
+    const { prev, next } = getPrevNext(fallacies, entry.data.slug);
+    const related = entry.data.related.map((r) => ({
+      slug: r.slug,
+      relationship: r.relationship,
+      title: slugMap.get(r.slug)?.data.title ?? r.slug,
+    }));
+    return {
+      params: { slug: entry.data.slug },
+      props: {
+        data: entry.data,
+        related,
+        prev: prev ? { slug: prev.data.slug, title: prev.data.title } : null,
+        next: next ? { slug: next.data.slug, title: next.data.title } : null,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { data, related, prev, next } = Astro.props;
+const family = getFamily(data.family);
+const path = `/fallacies/${data.slug}/`;
+const metaDescription = data.shortDefinition;
+---
+
+<BaseLayout title={data.title} description={metaDescription} path={path}>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: data.title }]} />
+
+  <article class="page">
+    <header class="topic-header prose">
+      <div class="topic-header__meta">
+        <span class="topic-header__num">#{data.number} of 15</span>
+        <span class="topic-header__icon"><Icon name={data.icon} size={40} /></span>
+        <FamilyBadge family={data.family} />
+      </div>
+      <h1>{data.title}</h1>
+      {
+        data.aliases.length > 0 && (
+          <p class="aliases">
+            <strong>Also called:</strong> {data.aliases.join(', ')}
+          </p>
+        )
+      }
+      <p style="font-size:1.2rem;">{data.shortDefinition}</p>
+      <div data-print="hide"><PrintButton /></div>
+    </header>
+
+    <section class="section-block prose" aria-labelledby="define-h">
+      <h2 id="define-h">A careful definition</h2>
+      <p>{data.carefulDefinition}</p>
+      <p class="text-muted">
+        <strong>Family — {family.label}:</strong>
+        {family.question}
+      </p>
+    </section>
+
+    <section class="section-block" aria-labelledby="move-h">
+      <h2 id="move-h">The move</h2>
+      <PatternBlock steps={data.movePattern} />
+    </section>
+
+    <section class="section-block prose" aria-labelledby="why-h">
+      <h2 id="why-h">Why it can feel convincing</h2>
+      <ul class="qlist">
+        {data.whyPersuasive.map((w) => <li>{w}</li>)}
+      </ul>
+    </section>
+
+    <section class="section-block" aria-labelledby="examples-h">
+      <h2 id="examples-h">Clear examples, diagnosed</h2>
+      {
+        data.clearExamples.map((ex) => (
+          <ExamplePanel variant="example" label="Clear example" title={ex.title} quote={ex.text}>
+            <p style="font-weight:600;margin-bottom:var(--space-1);">What went wrong:</p>
+            <ul class="qlist">
+              {ex.diagnosis.map((d) => (
+                <li>{d}</li>
+              ))}
+            </ul>
+            <div class="repair-line">
+              <strong>Repaired:</strong> {ex.repairedVersion}
+            </div>
+          </ExamplePanel>
+        ))
+      }
+    </section>
+
+    <section class="section-block" aria-labelledby="boundary-h">
+      <h2 id="boundary-h">Where the boundary is</h2>
+
+      <ExamplePanel
+        variant="non-example"
+        label="Not a fallacy"
+        title={data.nonExample.title}
+        quote={data.nonExample.text}
+      >
+        <p style="margin:0;">{data.nonExample.explanation}</p>
+      </ExamplePanel>
+
+      <ExamplePanel
+        variant="borderline"
+        label="Borderline case"
+        title={data.borderlineCase.title}
+        quote={data.borderlineCase.text}
+      >
+        <p style="font-weight:600;margin-bottom:var(--space-1);">Questions to ask:</p>
+        <ul class="qlist" style="margin:0;">
+          {data.borderlineCase.questions.map((q) => <li>{q}</li>)}
+        </ul>
+      </ExamplePanel>
+
+      <ExamplePanel variant="legit" label="Not automatically fallacious when">
+        <ul class="qlist" style="margin:0;">
+          {data.legitimateWhen.map((l) => <li>{l}</li>)}
+        </ul>
+      </ExamplePanel>
+    </section>
+
+    <section class="section-block prose" aria-labelledby="diagnostic-h">
+      <DiagnosticQuestions heading="Diagnostic questions" questions={data.diagnosticQuestions} />
+    </section>
+
+    <section class="section-block" aria-labelledby="spr-h">
+      <h2 id="spr-h">Spot it. Prove it. Repair it.</h2>
+      <SpotProveRepair data={data.spotProveRepair} />
+    </section>
+
+    <section class="section-block" aria-labelledby="project-h">
+      <h2 id="project-h">Use this for your project</h2>
+      <ProjectLaunchpad data={data.projectLaunchpad} />
+    </section>
+
+    <div class="section-block" data-print="hide">
+      <Callout variant="safeguard" title="Remember the fallacy-fallacy">
+        <p style="margin:0;">{FALLACY_FALLACY_SAFEGUARD}</p>
+      </Callout>
+    </div>
+
+    <section class="section-block" aria-labelledby="related-h">
+      <h2 id="related-h">Related and commonly confused</h2>
+      <RelatedTopics related={related} />
+    </section>
+
+    <section class="section-block prose" aria-labelledby="sources-h">
+      <h2 id="sources-h">Sources and attribution</h2>
+      <SourceNote
+        status={data.sourceStatus}
+        notes={data.sourceNotes}
+        furtherReading={data.furtherReading}
+      />
+    </section>
+
+    <nav class="prev-next" aria-label="Topic navigation">
+      {
+        prev ? (
+          <a class="prev" href={withBase(`/fallacies/${prev.slug}/`)}>
+            &larr; #{data.number - 1} {prev.title}
+          </a>
+        ) : (
+          <span />
+        )
+      }
+      {
+        next && (
+          <a class="next" href={withBase(`/fallacies/${next.slug}/`)}>
+            #{data.number + 1} {next.title} &rarr;
+          </a>
+        )
+      }
+    </nav>
+  </article>
+</BaseLayout>

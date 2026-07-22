@@ -1,0 +1,61 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PrintButton from '../../components/PrintButton.astro';
+
+const fields = [
+  'My topic',
+  'Source and exact quotation',
+  'Context (what came before and after)',
+  'Main conclusion',
+  'Reason or evidence offered',
+  'Possible fallacy',
+  'Exact point where the reasoning fails',
+  'Could another label fit? Why or why not?',
+  'What additional context would change my judgment?',
+  'Why might this argument persuade someone?',
+  'A fair reconstruction of the intended claim',
+  'A repaired argument',
+  'Source citation',
+];
+---
+
+<BaseLayout
+  title="Printable project planner"
+  description="A printable organizer for mapping, proving, and repairing an argument, with space to write."
+  path="/resources/project-planner/"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Fallacies', href: '/' },
+      { label: 'Print & Resources', href: '/resources/' },
+      { label: 'Project planner' },
+    ]}
+  />
+
+  <div class="page">
+    <div class="prose" data-print="hide">
+      <h1>Project planner</h1>
+      <p>Print this organizer and fill it in as you analyze your example.</p>
+      <PrintButton label="Print the planner" />
+    </div>
+
+    <div class="prose" style="margin-top:var(--space-6);">
+      {
+        fields.map((field) => (
+          <div style="margin-bottom:var(--space-6);">
+            <p style="font-weight:700;margin:0 0 var(--space-2);">{field}:</p>
+            <div
+              class="planner-field"
+              style="min-height:2.2rem;border-bottom:1px solid var(--line-strong);"
+            />
+            <div
+              class="planner-field"
+              style="min-height:2.2rem;border-bottom:1px solid var(--line-strong);"
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

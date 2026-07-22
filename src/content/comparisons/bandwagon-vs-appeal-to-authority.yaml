@@ -1,0 +1,36 @@
+slug: bandwagon-vs-appeal-to-authority
+order: 4
+left:
+  label: Bandwagon
+  slug: bandwagon
+right:
+  label: Appeal to Authority
+  slug: appeal-to-authority
+distinction: >-
+  Bandwagon relies on how many people believe something; appeal to authority relies on the status or position of a particular source.
+rows:
+  - question: Main source of credibility
+    left: The number of people
+    right: Status, title, fame, or institution
+  - question: Typical form
+    left: 'Everyone believes X.'
+    right: 'Important person A says X.'
+  - question: Legitimate clue
+    left: Popularity may matter to availability or voting
+    right: Relevant expertise may be meaningful evidence
+  - question: Repair
+    left: Add independent evidence beyond the crowd
+    right: Check expertise, evidence, consensus, and limits
+fitsLeft: >-
+  "Millions of people use this app, so it must be the best." The crowd size is the whole argument.
+fitsRight: >-
+  "A famous director says this phone is the healthiest choice, so it is." One high-status source is the whole argument.
+fitsBoth: >-
+  "Every celebrity recommends it, so it must work." The claim invokes both a crowd and high-status people.
+fitsNeither: >-
+  "Most specialists agree after reviewing multiple studies, and here is the evidence they rely on." Expert consensus with sound methods can be strong evidence.
+decisionPath:
+  - Is credibility coming from a number of people or from one source's status?
+  - Is the claim about truth and quality, or about popularity and availability?
+  - Does the source have relevant expertise for this exact claim?
+  - What independent evidence stands behind the claim?

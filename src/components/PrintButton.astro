@@ -1,0 +1,22 @@
+---
+import Icon from './Icon.astro';
+
+interface Props {
+  label?: string;
+}
+const { label = 'Print this page' } = Astro.props;
+---
+
+<button type="button" class="btn btn-secondary print-button" data-print-button hidden>
+  <Icon name="print" size={20} />
+  {label}
+</button>
+
+<script>
+  // The reference content prints fine on its own; this button is a convenience
+  // and only appears when JavaScript can wire it up.
+  document.querySelectorAll<HTMLButtonElement>('[data-print-button]').forEach((btn) => {
+    btn.hidden = false;
+    btn.addEventListener('click', () => window.print());
+  });
+</script>

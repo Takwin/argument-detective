@@ -1,0 +1,39 @@
+---
+import { site, canonical, withBase } from '../data/site';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Internal path of the current page, e.g. '/fallacies/straw-man/'. */
+  path: string;
+}
+
+const { title, description = site.description, path } = Astro.props;
+const fullTitle =
+  title === site.name ? `${site.name} — ${site.subtitle}` : `${title} · ${site.name}`;
+const canonicalUrl = canonical(path);
+const socialImageUrl = canonical('/social-card.svg');
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{fullTitle}</title>
+<meta name="description" content={description} />
+<link rel="canonical" href={canonicalUrl} />
+<link rel="icon" href={withBase('/favicon.svg')} type="image/svg+xml" />
+<meta name="color-scheme" content="light" />
+<meta name="theme-color" content="#1f3653" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content={site.name} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={socialImageUrl} />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={fullTitle} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={socialImageUrl} />
+
+<meta name="generator" content="Astro" />

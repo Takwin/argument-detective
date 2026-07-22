@@ -1,0 +1,13 @@
+---
+import { getFamily, type FamilyId } from '../data/families';
+
+interface Props {
+  family: FamilyId;
+  /** When true, render as a link to the family's diagnostic question note. */
+  showQuestion?: boolean;
+}
+const { family } = Astro.props;
+const data = getFamily(family);
+---
+
+<span class={`family-badge family--${family}`}>{data.label}</span>

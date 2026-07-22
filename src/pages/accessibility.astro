@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+
+const lastReviewed = 'July 22, 2026';
+---
+
+<BaseLayout
+  title="Accessibility"
+  description="Argument Detective targets WCAG 2.2 AA: keyboard access, screen-reader support, resizable text, and reduced-motion respect."
+  path="/accessibility/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Accessibility' }]} />
+
+  <article class="page prose">
+    <h1>Accessibility</h1>
+    <p style="font-size:1.15rem;">
+      {site.name} aims to meet <strong>WCAG 2.2 Level AA</strong>. Accessibility is treated as part
+      of the content, not an add-on.
+    </p>
+
+    <h2>What we do</h2>
+    <ul class="qlist">
+      <li>Every page works by keyboard, with a visible focus indicator and a skip link.</li>
+      <li>
+        All reference content works without JavaScript; only live search and practice need it.
+      </li>
+      <li>Text reflows at a 320-pixel width and stays readable at 200% zoom.</li>
+      <li>Color never carries meaning alone — families use text labels and symbols too.</li>
+      <li>Icons that are decorative are hidden from screen readers.</li>
+      <li>
+        The <code>prefers-reduced-motion</code> setting is respected; there is no autoplay or flashing.
+      </li>
+      <li>Pages print cleanly in black and white on Letter and A4.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <ul class="qlist">
+      <li>
+        Wide comparison tables scroll horizontally inside their own container on small screens.
+      </li>
+      <li>
+        Automated checks are necessary but not sufficient; manual screen-reader testing is ongoing.
+      </li>
+    </ul>
+
+    <h2>Contact</h2>
+    <p>
+      {
+        site.contactEmail
+          ? `Found a barrier? Email ${site.contactEmail} and we will try to fix it.`
+          : 'A contact method for accessibility feedback will be added here once the owner provides one.'
+      }
+    </p>
+
+    <p class="text-muted"><small>Last reviewed: {lastReviewed}.</small></p>
+  </article>
+</BaseLayout>

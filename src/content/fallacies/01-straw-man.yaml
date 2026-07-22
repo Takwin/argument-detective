@@ -1,0 +1,118 @@
+number: 1
+slug: straw-man
+title: Straw Man
+shortTitle: Straw Man
+family: distort-or-dodge
+icon: straw-man
+aliases:
+  - strawman
+  - misrepresentation
+  - distorted argument
+  - scarecrow argument
+keywords:
+  - exaggerate
+  - twist
+  - replace
+  - easier target
+  - opponent
+  - position
+shortDefinition: >-
+  A straw man changes someone's real claim into an easier, more extreme, or sillier claim and attacks the changed version instead.
+carefulDefinition: >-
+  A straw-man argument misrepresents another person's position in a way that makes it easier to reject. The response may exaggerate the original claim, remove an important limit, replace it with a more extreme claim, or invent a claim the person never made. Defeating the replacement does not answer the original argument.
+movePattern:
+  - Person A argues for claim X.
+  - Person B replaces X with distorted claim Y.
+  - Person B attacks Y.
+  - Claim X remains unanswered.
+whyPersuasive:
+  - The distorted version is often easier to dislike or laugh at.
+  - Listeners may remember the vivid exaggeration and forget the original limits.
+  - The response can sound decisive even though it avoided the actual claim.
+clearExamples:
+  - title: One homework-free night
+    text: >-
+      Mira says, "The class should have one homework-free night each week." Jonah replies, "Mira wants us never to practice anything at home."
+    diagnosis:
+      - Mira proposed one limited night, not the end of all home practice.
+      - Jonah replaced a narrow proposal with an extreme one.
+      - His reply attacks the extreme replacement rather than the original proposal.
+    repairedVersion: >-
+      "You are proposing one homework-free night. I disagree because some classes may need flexible practice schedules before major tests."
+  - title: A safer street
+    text: >-
+      A neighborhood group proposes lowering the speed limit on the block beside an elementary school. An opponent says, "They want to make driving impossible everywhere."
+    diagnosis:
+      - The proposal concerns one block near a school.
+      - The response expands it to every road and to making driving impossible.
+      - No reason is given against the actual speed-limit proposal.
+    repairedVersion: >-
+      "The proposal covers one school block. I would like evidence about whether a lower limit there would improve safety without creating another problem."
+nonExample:
+  title: Fair summary, direct disagreement
+  text: >-
+    "You want one homework-free night each week. I understand the limit, but I disagree because the schedule already gives students two low-work evenings."
+  explanation: >-
+    The response preserves the original limit and gives a reason against the actual proposal. Strong disagreement is not a straw man when the position is represented fairly.
+borderlineCase:
+  title: A short summary of a long idea
+  text: >-
+    A student summarizes a three-minute speech in one sentence and leaves out one qualification.
+  questions:
+    - Did the missing qualification change the main position?
+    - Was the shorter version a fair summary or an easier target?
+    - When corrected, did the student respond to the full position?
+legitimateWhen:
+  - A speaker draws out a real implication and supports each step connecting it to the original claim.
+  - A summary shortens an argument without changing its central meaning or important limits.
+  - A reductio ad absurdum tests a claim by showing what actually follows from it, rather than inventing a consequence.
+diagnosticQuestions:
+  - What did the original speaker actually claim?
+  - What changed between the original claim and the response?
+  - Did the response remove a limit or add an extreme position?
+  - Did the response ever answer the original claim?
+spotProveRepair:
+  sourceText: >-
+    "We should allow students to revise one major assignment." "So you think grades should not matter at all."
+  spot: >-
+    The second speaker may be using a straw man.
+  prove:
+    - The original claim allows one revision opportunity.
+    - The response changes that into the claim that grades should never matter.
+    - Rejecting the second claim does not address whether one revision is useful.
+  repair: >-
+    "You want one revision opportunity. I worry that unlimited changes could be unfair, so could the policy include a deadline and a limit?"
+projectLaunchpad:
+  essentialQuestion: >-
+    How does changing another person's claim make an unfair response seem stronger?
+  huntIdeas:
+    - Advertisements comparing a product with an exaggerated version of a competitor.
+    - Fictional arguments in books, television, films, or games.
+    - Public interviews or debates approved by the teacher.
+    - Invented school-policy scenarios.
+  researchQuestions:
+    - What was the original claim in exact words?
+    - Which words or limits were changed?
+    - Why is the replacement easier to attack?
+    - What would a fair response say?
+  productIdeas:
+    - Before-and-after argument map.
+    - Two-panel comic showing the real claim and the scarecrow version.
+    - Short video that pauses to reconstruct the original claim.
+    - Annotated transcript with color-coded changes.
+  caution: >-
+    Do not assume every imperfect summary is dishonest. Show that the change matters to the argument.
+related:
+  - slug: red-herring
+    relationship: A red herring distracts from the issue; a straw man replaces the issue with a distorted version.
+  - slug: ad-hominem
+    relationship: Ad hominem attacks the person; straw man attacks a changed version of the person's claim.
+  - slug: false-dilemma
+    relationship: A false dilemma limits the available choices; a straw man changes an opponent's position.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Purdue OWL: Logical Fallacies'
+    url: https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html

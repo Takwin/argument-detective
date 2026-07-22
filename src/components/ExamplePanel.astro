@@ -1,0 +1,16 @@
+---
+interface Props {
+  variant: 'example' | 'non-example' | 'borderline' | 'legit';
+  label: string;
+  title?: string;
+  quote?: string;
+}
+const { variant, label, title, quote } = Astro.props;
+---
+
+<article class={`panel panel--${variant}`}>
+  <p class="panel__label">{label}</p>
+  {title && <h3 style="margin-top:0;">{title}</h3>}
+  {quote && <blockquote class="panel__quote">{quote}</blockquote>}
+  <slot />
+</article>

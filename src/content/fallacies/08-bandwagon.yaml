@@ -1,0 +1,115 @@
+number: 8
+slug: bandwagon
+title: Bandwagon
+shortTitle: Bandwagon
+family: weak-evidence
+icon: bandwagon
+aliases:
+  - appeal to popularity
+  - argumentum ad populum
+  - everyone does it
+keywords:
+  - everyone
+  - most people
+  - popular
+  - trend
+  - social proof
+shortDefinition: >-
+  The bandwagon fallacy treats popularity as proof that a claim is true, a choice is best, or an action is right.
+carefulDefinition: >-
+  Popularity can matter for availability, social coordination, elections, trends, and shared experiences. It does not by itself establish truth, quality, morality, or safety. The bandwagon fallacy uses the size of the crowd as if it settled a question that really needs evidence.
+movePattern:
+  - Many people believe, buy, or do X.
+  - Therefore X must be true, best, safe, or right.
+whyPersuasive:
+  - Following a group can feel safe.
+  - Popularity reduces the fear of missing out.
+  - Belonging to the majority offers social comfort.
+clearExamples:
+  - title: The popular rumor
+    text: >-
+      "Most students believe the rumor, so the rumor must be true."
+    diagnosis:
+      - The number of believers is treated as evidence for the event.
+      - Belief count does not show that anything actually happened.
+      - Many people can share the same mistaken belief.
+    repairedVersion: >-
+      "Many students believe the rumor. Before repeating it, let us find out whether any reliable source confirms that it really happened."
+  - title: Most downloaded, so best
+    text: >-
+      "This is the most downloaded study app, so it must teach every subject better than any competitor."
+    diagnosis:
+      - Downloads measure popularity, not learning quality.
+      - The phrase "better than any competitor" is a strong claim with no comparison.
+      - Popular does not automatically mean effective.
+    repairedVersion: >-
+      "This app is very popular. To claim it teaches better, let us compare learning results across apps and subjects."
+nonExample:
+  title: Popularity that is actually relevant
+  text: >-
+    "I chose the popular multiplayer game because I want a large group of friends to be available online."
+  explanation: >-
+    Here popularity is directly relevant to the goal of finding other players. It is not being used as proof that the game is the best or highest quality.
+borderlineCase:
+  title: The crowded restaurant
+  text: >-
+    A restaurant is always crowded, and someone concludes the food must be excellent and safe.
+  questions:
+    - Does a crowd show that many people choose it, or that the food is safe and high quality?
+    - What independent information about safety or value is missing?
+    - Could the crowd reflect price, location, or habit rather than quality?
+legitimateWhen:
+  - Popularity is the fact actually being measured.
+  - Group participation is needed for the goal, such as playing a team game.
+  - A well-designed vote legitimately decides a shared rule.
+  - Popularity is treated as one clue rather than decisive proof.
+diagnosticQuestions:
+  - What does the number of people actually show?
+  - Is the conclusion about truth, quality, morality, or availability?
+  - What independent evidence is missing?
+  - Could many people share the same mistake?
+spotProveRepair:
+  sourceText: >-
+    "Everyone in the grade uses this study trick, so it is the most effective method."
+  spot: >-
+    This looks like a bandwagon appeal.
+  prove:
+    - Widespread use is treated as proof of effectiveness.
+    - No comparison of learning results is offered.
+    - Many students could use a method that does not work well.
+  repair: >-
+    "This trick is popular in our grade. Let us compare learning outcomes across methods and students before calling it the most effective."
+projectLaunchpad:
+  essentialQuestion: >-
+    When does "lots of people do it" count as evidence, and when is it just social pressure?
+  huntIdeas:
+    - Advertisements using "best-seller" or "most popular" labels.
+    - Download counts, view counts, and viral challenges.
+    - Peer-pressure moments in fiction.
+    - Trends presented as proof that something is good.
+  researchQuestions:
+    - How many people are involved, and how is that counted?
+    - Is the claim about popularity or about quality and truth?
+    - What independent evidence would actually support the claim?
+    - Could the crowd be wrong together?
+  productIdeas:
+    - A poster separating "popular" from "proven."
+    - An analysis of social proof in a real advertisement.
+    - A rewritten claim that adds independent evidence.
+    - A short survey experiment about following the crowd.
+  caution: >-
+    Popularity is not always irrelevant. It matters for coordination and availability, just not for proving truth or quality.
+related:
+  - slug: appeal-to-authority
+    relationship: Bandwagon relies on how many people believe; appeal to authority relies on one high-status source.
+  - slug: appeal-to-tradition
+    relationship: Bandwagon points to how many do it now; appeal to tradition points to how long it has been done.
+  - slug: anecdotal-fallacy
+    relationship: Both substitute a weak signal, one a crowd and one a single story, for stronger evidence.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'UNC Writing Center: Fallacies'
+    url: https://writingcenter.unc.edu/tips-and-tools/fallacies/

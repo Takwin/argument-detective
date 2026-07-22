@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import PrintButton from '../../components/PrintButton.astro';
+import { getFamily } from '../../data/families';
+import { getSortedFallacies, bySlugMap } from '../../data/fallacies';
+
+const fallacies = await getSortedFallacies();
+const slugMap = bySlugMap(fallacies);
+
+const rows = fallacies.map((f) => ({
+  number: f.data.number,
+  title: f.data.title,
+  family: getFamily(f.data.family).label,
+  coreMove: f.data.shortDefinition,
+  question: f.data.diagnosticQuestions[0],
+  confusion: slugMap.get(f.data.related[0].slug)?.data.title ?? f.data.related[0].slug,
+  legit: f.data.legitimateWhen[0],
+}));
+---
+
+<BaseLayout
+  title="All-topic comparison chart"
+  description="A single-page reference table of all 15 fallacies: family, core move, key question, common confusion, and legitimate-use note."
+  path="/resources/comparison-chart/"
+>
+  <Breadcrumbs
+    items={[
+      { label: 'Fallacies', href: '/' },
+      { label: 'Print & Resources', href: '/resources/' },
+      { label: 'Comparison chart' },
+    ]}
+  />
+
+  <div class="page">
+    <div class="prose" data-print="hide">
+      <h1>All-topic comparison chart</h1>
+      <p>
+        One table with every fallacy at a glance. For printing, choose landscape orientation. On
+        small screens the table scrolls sideways inside its box.
+      </p>
+      <PrintButton label="Print the chart" />
+    </div>
+
+    <div class="table-scroll" style="margin-top:var(--space-6);">
+      <table class="data">
+        <caption>The 15 fallacies at a glance</caption>
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Fallacy</th>
+            <th scope="col">Family</th>
+            <th scope="col">Core move</th>
+            <th scope="col">Key question</th>
+            <th scope="col">Often confused with</th>
+            <th scope="col">Not automatically fallacious when</th>
+          </tr>
+        </thead>
+        <tbody>
+          {
+            rows.map((r) => (
+              <tr>
+                <td>{r.number}</td>
+                <th scope="row">{r.title}</th>
+                <td>{r.family}</td>
+                <td>{r.coreMove}</td>
+                <td>{r.question}</td>
+                <td>{r.confusion}</td>
+                <td>{r.legit}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,118 @@
+number: 10
+slug: red-herring
+title: Red Herring
+shortTitle: Red Herring
+family: distort-or-dodge
+icon: red-herring
+aliases:
+  - distraction
+  - changing the subject
+  - irrelevant conclusion
+  - diversion
+keywords:
+  - off topic
+  - distraction
+  - irrelevant
+  - change the subject
+  - avoid the question
+shortDefinition: >-
+  A red herring introduces an irrelevant issue that pulls attention away from the question or claim that needs an answer.
+carefulDefinition: >-
+  A response may be true, interesting, or emotionally important and still be irrelevant to the current argument. The key question is whether it helps answer the original issue. Changing subjects is not always dishonest; emergencies, mistaken assumptions, or necessary context can justify a shift.
+movePattern:
+  - Question or claim X is raised.
+  - The response introduces attention-grabbing issue Y.
+  - The discussion moves to Y.
+  - X remains unanswered.
+whyPersuasive:
+  - Vivid side issues are memorable.
+  - A new topic can trigger emotion.
+  - The audience may forget what was originally asked.
+clearExamples:
+  - title: Copying and workload
+    text: >-
+      "Why did you copy the answers from the website?" Response: "This class gives too much homework."
+    diagnosis:
+      - The original question is about copying.
+      - The response shifts to workload, a separate issue.
+      - Workload may be a real concern, but it does not answer whether copying occurred or was acceptable.
+    repairedVersion: >-
+      "I copied the answers, and that was wrong. Separately, I do think the workload is heavy and would like to discuss it."
+  - title: The safety test and the charity
+    text: >-
+      A company is asked why its toy failed a safety test. Its spokesperson gives a long speech about the company's charitable donations without addressing the test.
+    diagnosis:
+      - The question concerns a failed safety test.
+      - The answer highlights unrelated charity work.
+      - The charity is admirable but irrelevant to the test result.
+    repairedVersion: >-
+      "The toy failed the safety test for these specific reasons, and here is our plan to fix it. Our charity work is a separate topic."
+nonExample:
+  title: Information that actually answers
+  text: >-
+    "Why were you absent?" Response: "The bus broke down, and here is the service notice."
+  explanation: >-
+    The additional information directly answers the question. Adding relevant context, or correcting a false assumption, is not a red herring.
+borderlineCase:
+  title: A shift to a safety risk
+  text: >-
+    A speaker shifts from a small procedural question to a genuine safety risk.
+  questions:
+    - Does the safety issue actually change what should be decided now?
+    - Or does it distract from answering the original question?
+    - Can both issues be addressed in turn rather than one replacing the other?
+legitimateWhen:
+  - The new information corrects a false assumption behind the question.
+  - An emergency or higher-priority issue genuinely changes the discussion.
+  - The speaker explicitly postpones one question and returns to it.
+  - The added context is relevant to evaluating the original claim.
+diagnosticQuestions:
+  - What was the original question?
+  - What new issue was introduced?
+  - Does the new issue help answer the original one?
+  - Was the original question ever answered?
+spotProveRepair:
+  sourceText: >-
+    "Why did the committee exceed its budget?" Response: "Our event had the best decorations in school history."
+  spot: >-
+    This looks like a red herring.
+  prove:
+    - The question is about exceeding the budget.
+    - The response praises the decorations instead.
+    - Decoration quality does not explain the overspending.
+  repair: >-
+    "The committee went over budget for these reasons, and here is how we will prevent it next time. The decorations are a separate point."
+projectLaunchpad:
+  essentialQuestion: >-
+    How does a true but off-topic statement pull a conversation away from the real question?
+  huntIdeas:
+    - Interviews where a question is dodged, in approved public form.
+    - Advertisements that answer a concern by changing the subject.
+    - Fictional dialogue where a character avoids a question.
+    - Debates that drift from the original issue.
+  researchQuestions:
+    - What exactly was asked or claimed?
+    - What new topic replaced it?
+    - Is the new topic relevant to the original?
+    - Was the first question ever answered?
+  productIdeas:
+    - A two-column transcript labeled "Original track" and "Detour."
+    - A highlighted moment where the conversation leaves the track.
+    - A rewritten exchange that answers first, then adds the side point.
+    - A short skit demonstrating a dodge and a fix.
+  caution: >-
+    Not every subject change is a red herring. Some shifts add relevant context or correct a mistaken assumption.
+related:
+  - slug: whataboutism
+    relationship: Whataboutism is a red-herring subtype that deflects by pointing to someone else's wrongdoing.
+  - slug: straw-man
+    relationship: A straw man distorts the claim; a red herring leaves the claim and introduces a different issue.
+  - slug: ad-hominem
+    relationship: An ad hominem is a distraction aimed at the person, a common way to change the subject.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Purdue OWL: Logical Fallacies'
+    url: https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html

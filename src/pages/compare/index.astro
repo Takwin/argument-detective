@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import ComparisonCard from '../../components/ComparisonCard.astro';
+import { getSortedComparisons } from '../../data/fallacies';
+
+const comparisons = await getSortedComparisons();
+---
+
+<BaseLayout
+  title="Compare commonly confused fallacies"
+  description="Side-by-side guides to the fallacy pairs students confuse most, with a decision path for telling them apart."
+  path="/compare/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Compare' }]} />
+
+  <div class="page prose">
+    <h1>Compare</h1>
+    <p style="font-size:1.15rem;">
+      "These two sound the same." When two fallacies feel alike, the difference is usually one
+      specific thing. Each guide gives a one-sentence distinction, a side-by-side table, examples
+      that fit each side (and one that fits neither), and a short decision path.
+    </p>
+  </div>
+
+  <section class="page section-block">
+    <div class="card-grid">
+      {
+        comparisons.map((c) => (
+          <ComparisonCard
+            slug={c.data.slug}
+            leftLabel={c.data.left.label}
+            rightLabel={c.data.right.label}
+            distinction={c.data.distinction}
+          />
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

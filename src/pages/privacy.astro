@@ -1,0 +1,66 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import { site } from '../data/site';
+
+const lastUpdated = 'July 22, 2026';
+---
+
+<BaseLayout
+  title="Privacy"
+  description="Argument Detective collects no personal information and stores no student data. Search and practice run entirely in your browser."
+  path="/privacy/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Privacy' }]} />
+
+  <article class="page prose">
+    <h1>Privacy</h1>
+    <p style="font-size:1.2rem;">
+      <strong>No ads. No tracking. Your information is never sold.</strong>
+    </p>
+
+    <div class="grid grid-2" style="margin-block:var(--space-6);">
+      <div class="panel panel--non-example" style="margin:0;">
+        <p class="panel__label">What we don’t do</p>
+        <ul class="qlist" style="margin:0;">
+          <li>No accounts, logins, names, or email addresses.</li>
+          <li>No ads, analytics, tracking pixels, or tracking cookies.</li>
+          <li>No cookies, local storage, or session storage of any kind.</li>
+          <li>No student submissions, uploads, saved scores, or profiles.</li>
+          <li>No selling or renting of data — there is no data to sell.</li>
+          <li>No third-party videos, social posts, remote fonts, or runtime APIs.</li>
+        </ul>
+      </div>
+      <div class="panel panel--borderline" style="margin:0;">
+        <p class="panel__label">What we do</p>
+        <ul class="qlist" style="margin:0;">
+          <li>Serve plain static pages you can read, print, or save.</li>
+          <li>Run search and optional practice entirely in your browser.</li>
+          <li>Forget everything the moment you close or refresh the page.</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>
+      {site.name} is designed as a no-account educational reference. The site does not ask for your name,
+      email address, school, age, or work. It does not accept student submissions, create profiles, use
+      advertising, run analytics, set application cookies, or save quiz and search activity.
+    </p>
+    <p>
+      Search and optional practice features run in your browser. Their responses are not sent to
+      {site.name} and are not saved by the project.
+    </p>
+    <p>
+      The website is delivered by a hosting provider. Like most web hosts, that provider may process
+      ordinary technical and security logs, such as an IP address and the requested page, under its
+      own privacy policy. {site.name} does not receive or use those logs to identify students or measure
+      classroom performance.
+    </p>
+    <p>
+      External links lead to other websites with their own privacy practices. {site.name} does not embed
+      third-party videos, social-media posts, advertisements, or tracking tools.
+    </p>
+
+    <p class="text-muted"><small>Last updated: {lastUpdated}.</small></p>
+  </article>
+</BaseLayout>

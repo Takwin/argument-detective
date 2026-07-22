@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import { withBase } from '../../data/site';
+
+const resources = [
+  {
+    href: '/resources/cards/',
+    title: 'Fallacy cards',
+    desc: 'All 15 fallacies as browser-printable cards — number, icon, family, a one-sentence definition, and a diagnostic question. About four per Letter page.',
+  },
+  {
+    href: '/resources/project-planner/',
+    title: 'Project planner',
+    desc: 'A printable organizer with generous writing space for quoting a source, mapping the argument, proving the flaw, and repairing it.',
+  },
+  {
+    href: '/resources/comparison-chart/',
+    title: 'All-topic comparison chart',
+    desc: 'A landscape-friendly table of all 15 fallacies: family, core move, key question, common confusion, and when the move is not automatically fallacious.',
+  },
+];
+---
+
+<BaseLayout
+  title="Print and classroom resources"
+  description="Browser-printable fallacy cards, a project planner, and an all-topic comparison chart. No design software needed."
+  path="/resources/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Print & Resources' }]} />
+
+  <article class="page prose">
+    <h1>Print &amp; resources</h1>
+    <p style="font-size:1.15rem;">
+      Every resource is a normal web page with print-ready styling, so it prints or saves as PDF
+      straight from your browser — no separate design files to maintain. Each works on Letter and A4
+      and stays legible in grayscale.
+    </p>
+  </article>
+
+  <section class="page section-block">
+    <div class="card-grid">
+      {
+        resources.map((r) => (
+          <article class="fallacy-card">
+            <h2 class="fallacy-card__title" style="font-size:1.2rem;margin:0;">
+              <a href={withBase(r.href)}>{r.title}</a>
+            </h2>
+            <p class="fallacy-card__def">{r.desc}</p>
+            <a class="fallacy-card__link" href={withBase(r.href)}>
+              Open &amp; print&nbsp;&rarr;
+            </a>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+</BaseLayout>

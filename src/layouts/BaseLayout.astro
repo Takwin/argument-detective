@@ -1,0 +1,33 @@
+---
+import '../styles/global.css';
+import '../styles/components.css';
+import '../styles/print.css';
+import BaseHead from '../components/BaseHead.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Internal path of the current page, e.g. '/fallacies/straw-man/'. */
+  path: string;
+}
+
+const { title, description, path } = Astro.props;
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} path={path} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <Header currentPath={currentPath} />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

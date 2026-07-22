@@ -1,0 +1,35 @@
+---
+interface Props {
+  data: {
+    sourceText: string;
+    spot: string;
+    prove: string[];
+    repair: string;
+  };
+}
+const { data } = Astro.props;
+---
+
+<div class="spr">
+  <div class="spr__step" style="background:var(--surface-sunken);">
+    <p class="eyebrow" style="margin:0 0 var(--space-2);">The argument</p>
+    <blockquote class="panel__quote" style="margin:0;">{data.sourceText}</blockquote>
+  </div>
+
+  <div class="spr__step">
+    <h3><span class="spr__badge">Spot</span> Notice the possible problem</h3>
+    <p style="margin:0;">{data.spot}</p>
+  </div>
+
+  <div class="spr__step">
+    <h3><span class="spr__badge">Prove</span> Point to the exact failure</h3>
+    <ul class="qlist" style="margin:0;">
+      {data.prove.map((p) => <li>{p}</li>)}
+    </ul>
+  </div>
+
+  <div class="spr__step">
+    <h3><span class="spr__badge">Repair</span> Rebuild it fairly</h3>
+    <div class="repair-line"><strong>Repaired:</strong> {data.repair}</div>
+  </div>
+</div>

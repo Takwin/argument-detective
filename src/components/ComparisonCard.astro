@@ -1,0 +1,25 @@
+---
+import { withBase } from '../data/site';
+import Icon from './Icon.astro';
+
+interface Props {
+  slug: string;
+  leftLabel: string;
+  rightLabel: string;
+  distinction: string;
+}
+const { slug, leftLabel, rightLabel, distinction } = Astro.props;
+---
+
+<article class="fallacy-card">
+  <div class="fallacy-card__top">
+    <span class="fallacy-card__icon"><Icon name="scale" size={28} /></span>
+    <h3 class="fallacy-card__title" style="font-size:1.1rem;">
+      <a href={withBase(`/compare/${slug}/`)}>{leftLabel} vs. {rightLabel}</a>
+    </h3>
+  </div>
+  <p class="fallacy-card__def">{distinction}</p>
+  <a class="fallacy-card__link" href={withBase(`/compare/${slug}/`)}
+    >Compare these two&nbsp;&rarr;</a
+  >
+</article>

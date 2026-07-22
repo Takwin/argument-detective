@@ -1,0 +1,12 @@
+---
+interface Props {
+  questions: string[];
+  heading?: string;
+}
+const { questions, heading } = Astro.props;
+---
+
+{heading && <h2>{heading}</h2>}
+<ul class="qlist">
+  {questions.map((q) => <li>{q}</li>)}
+</ul>

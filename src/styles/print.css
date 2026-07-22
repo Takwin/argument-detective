@@ -1,0 +1,103 @@
+/* =========================================================================
+   Argument Detective — print styles
+   Letter/A4-friendly via flexible CSS. Grayscale-legible. Hides chrome.
+   ========================================================================= */
+
+@media print {
+  :root {
+    --paper: #fff;
+    --surface: #fff;
+    --surface-sunken: #fff;
+  }
+
+  body {
+    background: #fff;
+    color: #000;
+    font-size: 11pt;
+    line-height: 1.4;
+  }
+
+  /* Hide interactive chrome and decoration */
+  .site-header,
+  .site-footer,
+  .skip-link,
+  .search-panel,
+  .print-button,
+  .nav-toggle,
+  .primary-nav,
+  .prev-next,
+  .hero__actions,
+  [data-print='hide'] {
+    display: none !important;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  /* Show URLs for external links so paper copies remain usable */
+  .prose a[href^='http']::after {
+    content: ' (' attr(href) ')';
+    font-size: 0.85em;
+    word-break: break-all;
+  }
+  /* ...but not for internal nav-style links */
+  a[href^='#']::after,
+  .no-print-url::after {
+    content: '' !important;
+  }
+
+  .panel,
+  .callout,
+  .fallacy-card,
+  .spr__step,
+  .related-card,
+  .pattern-list li,
+  .print-card {
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+    background: #fff !important;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  .page {
+    max-width: none;
+    padding: 0;
+  }
+
+  /* Printable card sheet: flexible grid, ~4 per Letter page */
+  .print-card-sheet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.4cm;
+  }
+  .print-card {
+    padding: 0.5cm;
+    border-radius: 6px;
+  }
+  .print-card__url {
+    font-family: var(--font-mono);
+    font-size: 0.8em;
+    word-break: break-all;
+  }
+
+  /* Planner writing space */
+  .planner-field {
+    border-bottom: 1px solid #000;
+    min-height: 1.6cm;
+    margin-bottom: 0.4cm;
+  }
+
+  @page {
+    margin: 1.5cm;
+  }
+}

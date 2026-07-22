@@ -1,0 +1,115 @@
+number: 11
+slug: ad-hominem
+title: Ad Hominem
+shortTitle: Ad Hominem
+family: distort-or-dodge
+icon: ad-hominem
+aliases:
+  - personal attack
+  - attack the person
+  - name-calling
+keywords:
+  - insult
+  - character
+  - attack the person
+  - irrelevant trait
+  - discredit
+shortDefinition: >-
+  Ad hominem attacks a person's character or traits instead of answering the person's argument.
+carefulDefinition: >-
+  Information about a speaker can sometimes matter, especially when evaluating testimony, expertise, motive, or conflict of interest. It becomes fallacious when an irrelevant personal attack substitutes for analysis of the claim or evidence.
+movePattern:
+  - Person A presents argument X.
+  - Person B attacks A's character, identity, appearance, age, habits, or motives.
+  - Person B acts as though X has been refuted.
+whyPersuasive:
+  - Negative impressions spread quickly.
+  - Personal conflict attracts attention.
+  - Disliking a speaker can feel like a reason to reject the message.
+clearExamples:
+  - title: The messy locker
+    text: >-
+      "Your proposal for a quieter lunch area is wrong because your locker is always messy."
+    diagnosis:
+      - The proposal is about a quieter lunch area.
+      - The response attacks the person's locker habits.
+      - Locker organization is irrelevant to the proposal's merits.
+    repairedVersion: >-
+      "Let us look at the quieter-lunch-area proposal itself: where it would go, how it would work, and what it would cost."
+  - title: The sore loser
+    text: >-
+      "Do not listen to Leo's evidence about the game rules. He is a sore loser."
+    diagnosis:
+      - Leo has presented evidence about the rules.
+      - The response labels him a sore loser.
+      - The insult does not address the evidence he gave.
+    repairedVersion: >-
+      "Let us check Leo's evidence about the rules against the official rulebook and decide based on what it says."
+nonExample:
+  title: A relevant credibility check
+  text: >-
+    "The witness was paid by the company and changed the story three times, so we should examine the testimony carefully and compare it with independent evidence."
+  explanation: >-
+    Credibility and conflict of interest can be relevant when evaluating testimony. Raising them and then checking the evidence is not the fallacy, as long as it does not simply insult the person.
+borderlineCase:
+  title: 'You are too young to understand'
+  text: >-
+    In a disagreement, one person says, "You are too young to understand."
+  questions:
+    - Is age being used as an irrelevant put-down, or does experience actually matter to this claim?
+    - What specific knowledge does the argument require?
+    - Was the argument itself ever addressed?
+legitimateWhen:
+  - The personal fact directly affects expertise, access to information, credibility, or conflict of interest.
+  - The speaker still evaluates the actual evidence.
+  - The conclusion is appropriately limited, such as "we need independent confirmation."
+diagnosticQuestions:
+  - What claim or evidence was presented?
+  - What personal trait was attacked?
+  - Is that trait relevant to this exact issue?
+  - Did the response address the argument itself?
+spotProveRepair:
+  sourceText: >-
+    "Her plan for the garden cannot work because she is annoying."
+  spot: >-
+    This looks like an ad hominem.
+  prove:
+    - The claim is about whether the garden plan will work.
+    - The response calls the person annoying.
+    - Being annoying has no bearing on the plan's feasibility.
+  repair: >-
+    "Let us evaluate the garden plan on cost, space, maintenance, and expected benefits."
+projectLaunchpad:
+  essentialQuestion: >-
+    When is information about a speaker relevant, and when is it just an insult standing in for a reply?
+  huntIdeas:
+    - Debates where opponents trade insults.
+    - Advertisements that mock a rival instead of comparing products.
+    - Fictional arguments built on name-calling.
+    - Public interviews, in approved and neutral form.
+  researchQuestions:
+    - What was the argument or evidence?
+    - What personal trait was targeted?
+    - Is that trait relevant to the claim?
+    - Did the response ever address the argument?
+  productIdeas:
+    - An argument card and a person card side by side, with an arrow showing where the response lands.
+    - A rewritten exchange that answers the claim instead of the person.
+    - A comparison of a relevant credibility point and an irrelevant insult.
+    - A short skit contrasting an attack and a fair reply.
+  caution: >-
+    Personal information is not always irrelevant. Conflicts of interest and credibility can matter, so check whether the trait actually bears on the claim.
+related:
+  - slug: guilt-by-association
+    relationship: Ad hominem attacks the person's own traits; guilt by association attacks through a bad connection.
+  - slug: straw-man
+    relationship: A straw man distorts the argument; an ad hominem ignores the argument to target the person.
+  - slug: red-herring
+    relationship: An ad hominem is a common red-herring move that distracts from the real claim.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'UNC Writing Center: Fallacies'
+    url: https://writingcenter.unc.edu/tips-and-tools/fallacies/

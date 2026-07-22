@@ -1,0 +1,124 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SearchAndFilters from '../components/SearchAndFilters.astro';
+import FallacyCard from '../components/FallacyCard.astro';
+import Callout from '../components/Callout.astro';
+import { withBase, site } from '../data/site';
+import { families } from '../data/families';
+import { FALLACY_FALLACY_SAFEGUARD } from '../data/glossary';
+import { getSortedFallacies } from '../data/fallacies';
+
+const fallacies = await getSortedFallacies();
+const workflow = ['Choose', 'Find', 'Map', 'Prove', 'Repair', 'Cite'];
+---
+
+<BaseLayout title={site.name} path="/">
+  <section class="hero page">
+    <div class="prose">
+      <p class="eyebrow">A field guide for your logical-fallacies project</p>
+      <h1>Bad reasoning can sound convincing.</h1>
+      <p style="font-size:1.2rem;">
+        Learn to <strong>spot</strong> the move, <strong>prove</strong> what went wrong, and
+        <strong>repair</strong> the argument.
+      </p>
+      <div class="hero__actions">
+        <a class="btn btn-primary" href="#all-fallacies">Explore all 15 fallacies</a>
+        <a class="btn btn-secondary" href={withBase('/how-arguments-work/')}>
+          Learn how arguments work
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <div class="page">
+    <Callout variant="safeguard" title="Important: the fallacy-fallacy">
+      <p style="margin:0;">{FALLACY_FALLACY_SAFEGUARD}</p>
+    </Callout>
+  </div>
+
+  <div class="page">
+    <SearchAndFilters count={fallacies.length} />
+  </div>
+
+  <section class="page" id="all-fallacies" aria-labelledby="all-fallacies-h">
+    <h2 id="all-fallacies-h">The 15 fallacies</h2>
+    <ul class="card-grid" style="list-style:none;padding:0;">
+      {
+        fallacies.map((f) => (
+          <FallacyCard
+            number={f.data.number}
+            slug={f.data.slug}
+            title={f.data.title}
+            family={f.data.family}
+            icon={f.data.icon}
+            shortDefinition={f.data.shortDefinition}
+            aliases={f.data.aliases}
+            keywords={f.data.keywords}
+          />
+        ))
+      }
+    </ul>
+    <p class="no-results" data-no-results hidden>
+      No fallacies match that search. Try a shorter word, or
+      <button
+        type="button"
+        class="btn btn-secondary"
+        style="min-height:40px;"
+        onclick="document.querySelector('[data-clear-all]')?.click()">clear the filters</button
+      >.
+    </p>
+  </section>
+
+  <section class="page section-block" aria-labelledby="families-h">
+    <h2 id="families-h">Four families of what goes wrong</h2>
+    <p class="prose">
+      Traditional lists of fallacies overlap and disagree. We group the 15 topics by what actually
+      fails in the reasoning, each with one diagnostic question.
+    </p>
+    <div class="family-overview">
+      {
+        families.map((family) => (
+          <div class="family-tile" style={`border-left-color: var(${family.colorVar});`}>
+            <span class={`family-badge family--${family.id}`}>{family.label}</span>
+            <p style="margin:var(--space-3) 0 var(--space-2);font-weight:600;">{family.question}</p>
+            <p class="text-muted" style="margin:0;">
+              {family.description}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="page section-block" aria-labelledby="workflow-h">
+    <h2 id="workflow-h">The project workflow</h2>
+    <p class="prose">
+      Every project follows the same six moves, from picking a topic to citing a source.
+    </p>
+    <ol class="workflow-strip">
+      {workflow.map((step) => <li>{step}</li>)}
+    </ol>
+    <p style="margin-top:var(--space-4);">
+      <a href={withBase('/project-guide/')}>See the full project guide&nbsp;&rarr;</a>
+    </p>
+  </section>
+
+  <section class="page section-block grid grid-2">
+    <div class="teaser">
+      <h2 style="margin-top:0;">"These two sound the same"</h2>
+      <p>
+        Comparison guides untangle the pairs students confuse most, like Red Herring vs.
+        Whataboutism or Anecdotal Fallacy vs. Hasty Generalization.
+      </p>
+      <a class="btn btn-secondary" href={withBase('/compare/')}>Open the comparison guides</a>
+    </div>
+    <div class="teaser">
+      <h2 style="margin-top:0;">Print &amp; classroom resources</h2>
+      <p>
+        Browser-printable fallacy cards, a project planner, and an all-topic comparison chart. No
+        design software needed — they print straight from the page.
+      </p>
+      <a class="btn btn-secondary" href={withBase('/resources/')}>Get printable resources</a>
+    </div>
+  </section>
+</BaseLayout>

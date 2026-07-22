@@ -1,0 +1,117 @@
+number: 4
+slug: anecdotal-fallacy
+title: Anecdotal Fallacy
+shortTitle: Anecdotal
+family: weak-evidence
+icon: anecdotal
+aliases:
+  - anecdotal evidence
+  - one story
+  - personal experience
+  - testimonial
+keywords:
+  - single case
+  - my experience
+  - one example
+  - story as proof
+  - sample size
+shortDefinition: >-
+  The anecdotal fallacy treats one story or personal experience as enough proof for a broad claim, especially when stronger evidence is available.
+carefulDefinition: >-
+  Stories can illustrate an idea, raise good questions, and reveal possible problems. They become weak reasoning when a single case is asked to establish what usually happens, what causes an outcome, or what everyone should believe. The story feels convincing, but one case rarely settles a broad claim.
+movePattern:
+  - Present one vivid experience.
+  - Treat it as representative of a much larger group.
+  - Ignore sample size, comparison data, or stronger evidence.
+whyPersuasive:
+  - Stories are memorable and emotional.
+  - A single case is concrete and easy to picture.
+  - A vivid experience often feels more real than a statistic.
+clearExamples:
+  - title: Music and one A
+    text: >-
+      "My cousin listened to music while studying and earned an A, so music makes every student learn better."
+    diagnosis:
+      - One person's success is stretched into a rule for every student.
+      - Other reasons for the A, such as the subject or study time, are ignored.
+      - A single case cannot establish a universal effect.
+    repairedVersion: >-
+      "My cousin studied well with music once. That raises a question, so let us compare test results for students who study with and without music."
+  - title: The bracelet testimonial
+    text: >-
+      "A customer says this bracelet cured her headaches, so the bracelet is an effective treatment."
+    diagnosis:
+      - A single testimonial is treated as proof the product works.
+      - It does not rule out coincidence, other treatments, or a placebo effect.
+      - No comparison group or repeated measurement is offered.
+    repairedVersion: >-
+      "One customer felt better while wearing the bracelet. To claim it treats headaches, we would need controlled studies comparing it with no bracelet."
+nonExample:
+  title: A story used to illustrate, not prove
+  text: >-
+    "One student's story shows what the new lunch policy felt like. A schoolwide survey and attendance data will be used to judge the overall effect."
+  explanation: >-
+    The story illustrates an experience while the broad conclusion rests on stronger evidence. Using a single case to open a question is not the fallacy.
+borderlineCase:
+  title: One report of a side effect
+  text: >-
+    One person reports a serious side effect after using a new product.
+  questions:
+    - Does one report justify investigation and caution, even if it cannot prove frequency?
+    - How common is the effect, and does this single case show that?
+    - Did the product actually cause the effect, or could something else explain it?
+legitimateWhen:
+  - The claim is only about the person's own experience.
+  - The story is used to generate a hypothesis to test later.
+  - The case is unusually informative, such as proving a supposedly impossible event can occur.
+  - Broader evidence supports the same conclusion.
+diagnosticQuestions:
+  - How many cases actually support the conclusion?
+  - Is the story representative of the whole group?
+  - Is stronger evidence available and being ignored?
+  - Is the claim about possibility, frequency, cause, or everyone?
+spotProveRepair:
+  sourceText: >-
+    "I used flash cards once and still missed a question, so flash cards do not work."
+  spot: >-
+    This looks like an anecdotal fallacy.
+  prove:
+    - A single attempt is treated as proof about all flash-card use.
+    - One missed question does not measure the method's overall effect.
+    - Many other factors could explain one missed question.
+  repair: >-
+    "Flash cards did not help me on one question. Let me compare several study methods across enough attempts before deciding which works best for me."
+projectLaunchpad:
+  essentialQuestion: >-
+    What can one story honestly show, and what does it need help from stronger evidence to prove?
+  huntIdeas:
+    - Product reviews and testimonials.
+    - Advertisements built around one customer's story.
+    - Claims like "it worked for me" about study or health habits.
+    - Fictional characters who generalize from a single event.
+  researchQuestions:
+    - What broad claim is the story being asked to prove?
+    - How many cases would it take to support that claim?
+    - What stronger evidence exists or could be gathered?
+    - Is the claim about one person or about everyone?
+  productIdeas:
+    - A "story versus data" poster pairing a testimonial with a data question.
+    - A rewritten claim that matches the evidence to its size.
+    - A short interview segment that asks for more than one case.
+    - An infographic on sample size versus certainty.
+  caution: >-
+    A single case can be a real clue. The problem is treating it as the whole picture, not telling a story at all.
+related:
+  - slug: hasty-generalization
+    relationship: Anecdotal fallacy is about using a story as evidence; hasty generalization is about a sample too small for the conclusion.
+  - slug: false-cause
+    relationship: A story often pairs with a false-cause leap, claiming one experience proves what caused an outcome.
+  - slug: appeal-to-emotion
+    relationship: Vivid stories can carry emotional weight that stands in for missing evidence.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'UNC Writing Center: Fallacies'
+    url: https://writingcenter.unc.edu/tips-and-tools/fallacies/

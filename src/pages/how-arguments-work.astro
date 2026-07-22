@@ -1,0 +1,131 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Callout from '../components/Callout.astro';
+import { glossary, supportTests, FALLACY_FALLACY_SAFEGUARD } from '../data/glossary';
+import { withBase } from '../data/site';
+
+const argumentMap = [
+  { role: 'Conclusion', text: 'The school should add one shaded outdoor table.' },
+  { role: 'Reason 1', text: 'Students have few outdoor reading spaces.' },
+  { role: 'Reason 2', text: 'Shade reduces heat exposure.' },
+  { role: 'Reason 3', text: 'The table has more than one use.' },
+  {
+    role: 'Evidence needed',
+    text: 'A map of current seating, temperature or shade information, student-use data, cost, and maintenance needs.',
+  },
+  { role: 'Assumption', text: 'The benefits are worth the cost and space.' },
+  { role: 'Possible counterargument', text: 'Another campus need may have higher priority.' },
+];
+
+const whereFallacies = [
+  'Distortion changes the claim before testing it.',
+  'Distraction breaks relevance.',
+  'Weak evidence fails sufficiency.',
+  'False cause invents the bridge between evidence and conclusion.',
+  'Circular reasoning never reaches independent support.',
+  'Emotional pressure can hide missing reasons.',
+];
+---
+
+<BaseLayout
+  title="How arguments work"
+  description="A short guide to claims, reasons, evidence, and assumptions — and the three tests every argument should pass."
+  path="/how-arguments-work/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'How Arguments Work' }]} />
+
+  <article class="page prose">
+    <h1>How arguments work</h1>
+    <p style="font-size:1.15rem;">
+      An argument is not just a disagreement. It is a conclusion supported by one or more reasons.
+      To judge an argument fairly, first map what it is saying. Then test whether the reasons are
+      acceptable, relevant, and strong enough.
+    </p>
+
+    <h2 id="vocab">The vocabulary</h2>
+    <dl>
+      {
+        glossary.map((item) => (
+          <div style="margin-bottom:var(--space-4);">
+            <dt style="font-weight:700;">{item.term}</dt>
+            <dd style="margin:var(--space-1) 0 0;">{item.definition}</dd>
+          </div>
+        ))
+      }
+    </dl>
+
+    <h2 id="map">A worked argument map</h2>
+    <blockquote class="panel__quote">
+      The school should add one shaded outdoor table because students currently have few places to
+      read outside, shade reduces heat exposure, and the table could be used during lunch and class
+      activities.
+    </blockquote>
+    <div class="table-scroll" style="margin-top:var(--space-4);">
+      <table class="data">
+        <caption>Mapping the argument into parts</caption>
+        <thead>
+          <tr><th scope="col">Part</th><th scope="col">In this argument</th></tr>
+        </thead>
+        <tbody>
+          {
+            argumentMap.map((row) => (
+              <tr>
+                <th scope="row">{row.role}</th>
+                <td>{row.text}</td>
+              </tr>
+            ))
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <h2 id="tests">Three tests for support</h2>
+    <p>Every reason should pass all three before it can carry a conclusion.</p>
+    <div class="grid grid-3" style="margin-bottom:var(--space-6);">
+      {
+        supportTests.map((t) => (
+          <div class="teaser">
+            <h3 style="margin-top:0;">{t.term}</h3>
+            <p style="margin:0;">{t.definition}</p>
+          </div>
+        ))
+      }
+    </div>
+    <p>
+      <code
+        >Reason &rarr; [acceptable?] &rarr; [relevant?] &rarr; [sufficient?] &rarr; Conclusion</code
+      >
+    </p>
+
+    <h2 id="where">Where fallacies enter the map</h2>
+    <ul class="qlist">
+      {whereFallacies.map((w) => <li>{w}</li>)}
+    </ul>
+
+    <Callout variant="safeguard" title="The fallacy-fallacy">
+      <p style="margin:0;">{FALLACY_FALLACY_SAFEGUARD}</p>
+    </Callout>
+
+    <h2 id="exercise">Mini exercise</h2>
+    <blockquote class="panel__quote">
+      The school should buy this learning game because every student online says it is amazing.
+    </blockquote>
+    <ol class="qlist">
+      <li>What is the conclusion?</li>
+      <li>What evidence is offered?</li>
+      <li>Does popularity establish learning value?</li>
+      <li>What evidence would improve the argument?</li>
+    </ol>
+    <div class="repair-line">
+      <strong>Repaired:</strong> The school should test the game with a small group because it aligns
+      with the unit goals, includes useful feedback, meets accessibility requirements, and performed well
+      in independent classroom trials.
+    </div>
+
+    <p style="margin-top:var(--space-8);">
+      Ready to analyze one? <a href={withBase('/project-guide/')}>Start the project guide</a> or
+      <a href={withBase('/')}>browse the 15 fallacies</a>.
+    </p>
+  </article>
+</BaseLayout>

@@ -1,0 +1,42 @@
+---
+import { withBase } from '../data/site';
+import { getFamily, type FamilyId } from '../data/families';
+import Icon from './Icon.astro';
+import FamilyBadge from './FamilyBadge.astro';
+
+interface Props {
+  number: number;
+  slug: string;
+  title: string;
+  family: FamilyId;
+  icon: string;
+  shortDefinition: string;
+  aliases: string[];
+  keywords: string[];
+}
+const { number, slug, title, family, icon, shortDefinition, aliases, keywords } = Astro.props;
+const familyData = getFamily(family);
+const href = withBase(`/fallacies/${slug}/`);
+// Searchable haystack exposed as a data attribute for the client-side filter.
+const haystack = [title, slug, familyData.label, shortDefinition, ...aliases, ...keywords]
+  .join(' ')
+  .toLowerCase();
+---
+
+<li
+  class="fallacy-card"
+  data-fallacy-card
+  data-family={family}
+  data-search={haystack}
+  data-number={number}
+>
+  <div class="fallacy-card__top">
+    <span class="fallacy-card__number">#{number}</span>
+    <span class="fallacy-card__icon"><Icon name={icon} size={30} /></span>
+    <FamilyBadge family={family} />
+  </div>
+  <h3 class="fallacy-card__title"><a href={href}>{title}</a></h3>
+  <p class="fallacy-card__def">{shortDefinition}</p>
+  <p class="fallacy-card__q">{familyData.question}</p>
+  <a class="fallacy-card__link" href={href}>Explore {title}&nbsp;&rarr;</a>
+</li>

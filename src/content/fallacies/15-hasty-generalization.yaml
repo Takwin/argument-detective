@@ -1,0 +1,118 @@
+number: 15
+slug: hasty-generalization
+title: Hasty Generalization
+shortTitle: Hasty
+family: weak-evidence
+icon: hasty-generalization
+aliases:
+  - faulty generalization
+  - small sample
+  - stereotype
+  - sweeping claim
+keywords:
+  - too few
+  - small sample
+  - all
+  - always
+  - jump to a rule
+shortDefinition: >-
+  A hasty generalization draws a broad conclusion from a sample that is too small, unrepresentative, or poorly selected.
+carefulDefinition: >-
+  Generalization is necessary for learning from evidence. The fallacy occurs when the size and variety of the sample do not justify the size or certainty of the conclusion. One dramatic example often becomes a claim about "all," "always," "never," or an entire group.
+movePattern:
+  - Observe a small or biased sample.
+  - Generalize to a large group or a future pattern.
+  - Use stronger certainty than the evidence supports.
+whyPersuasive:
+  - Small samples are easy to collect.
+  - Vivid cases are memorable.
+  - Broad rules reduce uncertainty and feel efficient.
+clearExamples:
+  - title: One test, whole identity
+    text: >-
+      "I earned a low score on one math test, so I am not a math person."
+    diagnosis:
+      - A single assessment is used to define a permanent ability.
+      - One score cannot capture overall skill or growth.
+      - The conclusion is far broader than the evidence.
+    repairedVersion: >-
+      "I struggled on one math test. Let me look at several assessments and topics before drawing a conclusion about my math ability."
+  - title: Two students, whole class
+    text: >-
+      "Two students from the other class were noisy, so that entire class is disrespectful."
+    diagnosis:
+      - The sample is two students.
+      - The conclusion is about the entire class.
+      - Two cases may not represent the whole group.
+    repairedVersion: >-
+      "Two students from that class were noisy. That is a small sample, so I should not judge the whole class from it."
+nonExample:
+  title: A conclusion matched to the sample
+  text: >-
+    "In a random, sufficiently large survey, 62 percent of respondents preferred option A. The report states a margin of error and limits the claim to the surveyed population."
+  explanation: >-
+    The conclusion matches the sample's size and design and uses cautious wording. A generalization backed by a strong, representative sample is not the fallacy.
+borderlineCase:
+  title: One illness after a meal
+  text: >-
+    A friend became ill after eating at a restaurant.
+  questions:
+    - Is it reasonable to report the incident and investigate?
+    - Is it too strong to declare the restaurant unsafe for everyone from one case?
+    - What additional evidence would justify a broader conclusion?
+legitimateWhen:
+  - The conclusion is about the observed cases only.
+  - The sample is large and representative enough for the claim.
+  - The speaker uses cautious wording.
+  - A single counterexample is used to disprove a universal claim, such as "No birds can swim."
+diagnosticQuestions:
+  - How large is the sample?
+  - How was it selected?
+  - Does it represent the group named in the conclusion?
+  - How broad and certain is the conclusion?
+  - What cases may be missing?
+spotProveRepair:
+  sourceText: >-
+    "The first two fantasy books I tried were boring, so fantasy books are boring."
+  spot: >-
+    This looks like a hasty generalization.
+  prove:
+    - The sample is two books.
+    - The conclusion covers all fantasy books.
+    - Two examples cannot represent an entire genre.
+  repair: >-
+    "The first two fantasy books I tried were boring. Let me sample varied authors and subgenres, or limit the claim to those two books."
+projectLaunchpad:
+  essentialQuestion: >-
+    How big and how varied does the evidence need to be to support a claim about "all" or "always"?
+  huntIdeas:
+    - Advertisements that generalize from a few happy customers.
+    - Stereotypes stated as facts, in neutral classroom form.
+    - Reviews that judge a whole category from one item.
+    - Fictional characters who overgeneralize.
+  researchQuestions:
+    - How many cases support the conclusion?
+    - How were those cases chosen?
+    - Does the sample represent the whole group?
+    - How certain is the conclusion compared with the evidence?
+  productIdeas:
+    - A "sample-to-claim" scale weighing evidence against conclusion size.
+    - A rewritten claim narrowed to fit the sample.
+    - An infographic on sample size and representativeness.
+    - A short experiment comparing small and large samples.
+  caution: >-
+    Generalizing is necessary and useful. The fallacy is making the conclusion bigger or more certain than the sample allows.
+related:
+  - slug: anecdotal-fallacy
+    relationship: Anecdotal fallacy uses a story as evidence; hasty generalization draws a conclusion too broad for the sample.
+  - slug: bandwagon
+    relationship: Both lean on limited signals, one a crowd and one a small sample, instead of strong evidence.
+  - slug: false-cause
+    relationship: Both jump ahead of the evidence, one to a cause and one to a broad rule.
+sourceStatus: original
+sourceNotes: []
+furtherReading:
+  - label: 'Internet Encyclopedia of Philosophy: Fallacies'
+    url: https://iep.utm.edu/fallacy/
+  - label: 'Purdue OWL: Logical Fallacies'
+    url: https://owl.purdue.edu/owl/general_writing/academic_writing/logic_in_argumentative_writing/fallacies.html
