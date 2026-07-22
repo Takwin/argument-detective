@@ -119,3 +119,35 @@ choices, with reasons and tradeoffs.
   feature of version 1 exists, is tested, and is deployed.
 - **Effect:** Footer badge only; bump to 0.85/1.0 belongs to the owner after
   ChatGPT Sol review and classroom trial.
+
+## D12 — Post-review hardening (Codex round, 2026-07-22)
+
+- **Decision:** After an external Codex review found P0 defects on the live
+  site, three durable changes were made beyond the direct fixes:
+  1. A global `[hidden] { display: none !important; }` guard, because author
+     display rules silently defeat the UA's `[hidden]` rule.
+  2. E2e assertions now check **computed visibility** (`:visible` counts,
+     `toBeHidden()`) instead of DOM properties, and a 5-page 320×800
+     no-horizontal-overflow suite enforces WCAG 1.4.10 reflow.
+  3. Privacy audits must be run against the **deployed edge with a browser
+     user-agent**, not just the build output: Cloudflare's zone-level Web
+     Analytics injects a RUM beacon only for browser-like requests, which a
+     default-UA curl audit cannot see.
+- **Reason:** Each defect passed the original test suite because the assertion
+  targeted the wrong layer (DOM property vs. computed style; dist output vs.
+  edge response; 375px vs. the specified 320px).
+- **Effect:** Regressions of these classes now fail CI. The zone-analytics
+  toggle itself is an owner dashboard action (the automation token has no RUM
+  write scope) and is tracked in `BUILD_REPORT.md` Known issues.
+
+## D13 — GitHub repo is source-of-truth mirror; GH Pages workflow manual-only
+
+- **Decision:** The public repository <https://github.com/Takwin/argument-detective>
+  hosts the source; production deploys remain Cloudflare Pages direct upload.
+  `deploy-pages.yml` was switched to `workflow_dispatch` only.
+- **Reason:** The owner requested "just that site" — no parallel GitHub Pages
+  deployment. An on-push Pages deploy would fail (Pages not enabled) and clutter
+  CI signal, while keeping the workflow preserves the handoff's portability
+  requirement.
+- **Effect:** CI (checks + e2e) runs on every push; a GitHub Pages deploy can
+  be run manually if the site ever needs to move hosts.
