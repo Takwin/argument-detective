@@ -81,16 +81,18 @@
   site's own CSS and inlined scripts; no external scripts, styles, fonts, or
   images. External hyperlinks (further reading) are plain links, opened in the
   same tab, with `rel="noopener noreferrer"` where applicable.
-- **Edge-injected analytics (found in external review, being remediated):**
-  Cloudflare's zone-level Web Analytics on `rinehartexcel.com` has
-  `auto_install: true`, which injects `static.cloudflareinsights.com/beacon.min.js`
-  (RUM) into HTML served to browsers on the custom domain — contradicting the
-  privacy page. The Pages project itself has analytics disabled (verified
-  `web_analytics_tag/token: null`), and the `pages.dev` origin serves clean
-  HTML. Disabling the zone auto-injection requires an account permission the
-  automation token lacks, so it is a one-time owner dashboard toggle
-  (Analytics & Logs → Web Analytics → rinehartexcel.com → disable automatic
-  setup). A clean browser-UA network audit must be re-run after the toggle.
+- **Edge-injected analytics (found in external review — RESOLVED 2026-07-22):**
+  Cloudflare's zone-level Web Analytics on `rinehartexcel.com` had automatic
+  setup enabled, injecting `static.cloudflareinsights.com/beacon.min.js` (RUM)
+  into HTML served to browsers on the custom domain — contradicting the privacy
+  page. The application and Pages project were never the source (verified
+  `web_analytics_tag/token: null`; `pages.dev` origin served clean HTML). The
+  owner disabled the zone's automatic setup in the Cloudflare dashboard.
+  **Post-fix audit:** browser-UA fetches of `/`, `/practice/`,
+  `/fallacies/straw-man/`, and `/privacy/` contain zero beacon references, and
+  a live browser session shows no third-party script tags and no requests to
+  `cloudflareinsights.com` or `/cdn-cgi/rum`. The privacy page's claims now
+  match observed network behavior end to end.
 - **Forms or data transmission:** None sent anywhere. The search box and the
   practice radio forms run entirely in page memory; practice forms prevent
   submission and never transmit, store, or score answers.
@@ -152,7 +154,8 @@ An external Codex review of the live site found three P0 defects. Status:
    clear restores 15).
 2. **Edge-injected Cloudflare RUM beacon** contradicting the privacy page —
    **root-caused** to zone-level Web Analytics auto-injection (not the app, not
-   the Pages project); **owner dashboard toggle pending**, see
+   the Pages project) and **RESOLVED**: the owner disabled the zone's automatic
+   setup; post-fix browser-UA and live-session audits are clean. See
    Privacy/network review above.
 3. **320px reflow failure** (330px document width) — **FIXED** in `ee392d2`
    (card header wraps; grid children `min-width: 0`); new 5-page 320×800
@@ -165,10 +168,6 @@ issues).
 
 ## Known issues
 
-- **Zone-level Web Analytics injection (P0, pending owner action):** the
-  Cloudflare dashboard toggle described above must be flipped by the owner,
-  then the network audit re-verified. Until then, browsers on the custom
-  domain receive the RUM beacon.
 - **Dev-only dependency advisories:** `npm audit` reports advisories in
   build-time dependencies (esbuild dev server, sharp) that ship with Astro's
   toolchain. They affect the local dev server only and are **not present in the
