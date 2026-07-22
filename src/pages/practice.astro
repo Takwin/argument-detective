@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import Callout from '../components/Callout.astro';
+import QuickCheck from '../components/QuickCheck.astro';
+import { withBase } from '../data/site';
+import { FALLACY_FALLACY_SAFEGUARD } from '../data/glossary';
+import { practiceScenarios } from '../data/practice';
+---
+
+<BaseLayout
+  title="Practice"
+  description="Quick practice scenarios: pick the label you would argue for, then compare your thinking. Nothing is scored or saved."
+  path="/practice/"
+>
+  <Breadcrumbs items={[{ label: 'Fallacies', href: '/' }, { label: 'Practice' }]} />
+
+  <article class="page">
+    <header class="topic-header prose">
+      <p class="eyebrow">Quick checks</p>
+      <h1>Practice</h1>
+      <p style="font-size:1.15rem;">
+        {practiceScenarios.length} short scenarios. Read each argument, pick the label you would argue
+        for, and check your thinking. You will get an explanation, not a score — nothing is recorded or
+        saved, and refreshing the page clears everything.
+      </p>
+      <p>
+        <strong>How to play detective:</strong> more than one label can be defensible for the same argument,
+        and sometimes the honest answer is <em>Not a fallacy</em> or
+        <em>Not enough context</em>. What matters is the reason you would give, not the name alone.
+        If the check buttons do not appear, open <em>Show the discussion</em> under each scenario instead.
+      </p>
+    </header>
+
+    <div class="prose" style="margin-bottom:var(--space-8);">
+      <Callout variant="safeguard" title="Remember the fallacy-fallacy">
+        <p style="margin:0;">{FALLACY_FALLACY_SAFEGUARD}</p>
+      </Callout>
+    </div>
+
+    <section aria-label="Practice scenarios">
+      {practiceScenarios.map((scenario, i) => <QuickCheck scenario={scenario} index={i + 1} />)}
+    </section>
+
+    <section class="section-block prose" aria-labelledby="next-h">
+      <h2 id="next-h">Ready for the real thing?</h2>
+      <p>
+        Take the same moves to an actual example: the
+        <a href={withBase('/project-guide/')}>project guide</a> walks you through finding, mapping, proving,
+        and repairing an argument of your own. When two labels feel close, the
+        <a href={withBase('/compare/')}>comparison guides</a> break the tie.
+      </p>
+    </section>
+  </article>
+</BaseLayout>
+
+<script>
+  import '../scripts/quick-check.ts';
+</script>

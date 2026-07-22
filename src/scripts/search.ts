@@ -85,3 +85,6 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+
+// Mark this file as a module so its top-level names stay file-scoped.
+export {};

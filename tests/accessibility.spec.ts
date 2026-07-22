@@ -13,6 +13,7 @@ const pages = [
   { name: 'project guide', path: '/project-guide/' },
   { name: 'printable cards', path: '/resources/cards/' },
   { name: 'privacy', path: '/privacy/' },
+  { name: 'practice', path: '/practice/' },
 ];
 
 for (const { name, path } of pages) {

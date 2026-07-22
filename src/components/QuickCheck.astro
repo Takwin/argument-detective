@@ -1,0 +1,78 @@
+---
+import type { PracticeScenario, PracticeQuality } from '../data/practice';
+
+interface Props {
+  scenario: PracticeScenario;
+  index: number;
+}
+const { scenario, index } = Astro.props;
+
+const qualityLabel: Record<PracticeQuality, string> = {
+  best: 'the strongest label',
+  defensible: 'defensible',
+  'not-quite': 'worth another look',
+};
+
+// Author-controlled data for the client script. Escape `<` so the JSON can
+// never terminate the script element early.
+const payload = JSON.stringify({
+  options: Object.fromEntries(
+    scenario.options.map((o) => [o.id, { quality: o.quality, explanation: o.explanation }])
+  ),
+  discussion: scenario.discussion,
+}).replace(/</g, '\\u003c');
+---
+
+<article class="quick-check" data-quick-check>
+  <form data-qc-form>
+    <fieldset>
+      <legend>Scenario {index}: {scenario.title}</legend>
+      <blockquote class="panel__quote">{scenario.prompt}</blockquote>
+      <p style="font-weight:600;">{scenario.question}</p>
+      <div class="options">
+        {
+          scenario.options.map((option) => (
+            <label class="option">
+              <input type="radio" name={`qc-${scenario.id}`} value={option.id} />
+              <span>{option.label}</span>
+            </label>
+          ))
+        }
+      </div>
+      <button
+        type="submit"
+        class="btn btn-primary"
+        style="margin-top:var(--space-4);"
+        data-qc-check
+        data-print="hide"
+        hidden
+      >
+        Check my thinking
+      </button>
+    </fieldset>
+  </form>
+
+  <div class="feedback" data-qc-feedback role="status" hidden></div>
+
+  <details data-qc-fallback style="margin-top:var(--space-4);">
+    <summary style="cursor:pointer;font-weight:600;">Show the discussion</summary>
+    <dl style="margin-top:var(--space-3);">
+      {
+        scenario.options.map((option) => (
+          <div style="margin-bottom:var(--space-3);">
+            <dt>
+              <strong>{option.label}</strong> — {qualityLabel[option.quality]}
+            </dt>
+            <dd style="margin:var(--space-1) 0 0;">{option.explanation}</dd>
+          </div>
+        ))
+      }
+    </dl>
+    <p style="margin:0;">
+      <strong>The bigger picture:</strong>
+      {scenario.discussion}
+    </p>
+  </details>
+
+  <script type="application/json" is:inline data-qc-data set:html={payload} />
+</article>

@@ -23,35 +23,40 @@
 - Printable resources: fallacy cards, project planner, all-topic comparison chart.
 - Licensing/attribution, privacy (with host-log caveat), accessibility statement.
 
-**P1 (partial):**
+**P1 (all complete):**
 
-- Printable comparison chart (P1) — complete.
-- Optional in-browser practice (`/practice/`) — **deferred** (see `DECISIONS.md`
-  D7). Not linked anywhere; no broken routes.
+- Printable comparison chart — complete.
+- Optional in-browser practice (`/practice/`) — **complete** (Phase 5, see
+  `DECISIONS.md` D7): 10 reviewed scenarios with "Not a fallacy" / "Not enough
+  context" options, defensible-label handling, explanation-based feedback,
+  page-memory-only state, and a no-JS `<details>` discussion fallback. Linked
+  from the homepage, footer, and project guide (nav order kept per spec, D10).
 
 ## Commands and results
 
 - `npm ci`: PASS
-- `npm run format:check`: PASS (45 files, Prettier clean)
-- `astro check`: PASS (0 errors, 0 warnings, 1 hint)
-- `npm test` (vitest): PASS (55 tests — schema + completeness)
-- `npm run build`: PASS (34 pages)
-- `npm run test:e2e` (Playwright): PASS (46 tests — 35 route + 11 accessibility)
+- `npm run format:check`: PASS (Prettier clean)
+- `astro check`: PASS (0 errors, 0 warnings)
+- `npm test` (vitest): PASS (110 tests — schema + completeness + practice data)
+- `npm run build`: PASS (35 pages)
+- `npm run test:e2e` (Playwright): PASS (51 tests — routes, practice
+  interactions, and accessibility)
 
 ## Generated routes
 
 - Fallacy pages: **15**
 - Comparison pages: **7** (+ comparison index)
-- Other routes: home, how-arguments-work, project-guide, resources (index, cards,
-  project-planner, comparison-chart), credits, privacy, accessibility, 404.
-- Total HTML pages built: **34**
+- Other routes: home, how-arguments-work, project-guide, practice, resources
+  (index, cards, project-planner, comparison-chart), credits, privacy,
+  accessibility, 404.
+- Total HTML pages built: **35**
 
 ## Accessibility review
 
-- **Automated:** `@axe-core/playwright` against 11 representative pages
+- **Automated:** `@axe-core/playwright` against 12 representative pages
   (homepage, one page per family, comparison index + a comparison, how-arguments,
-  project guide, printable cards, privacy) with tags wcag2a/2aa/21a/21aa/22aa —
-  **0 serious or critical violations**.
+  project guide, printable cards, privacy, practice) with tags
+  wcag2a/2aa/21a/21aa/22aa — **0 serious or critical violations**.
 - **Keyboard:** Skip link, visible focus outlines, real `<a>` for all
   navigation, `<button>` only for actions, `aria-current="page"`, Escape closes
   mobile nav. Search updates a polite live region without stealing focus.
@@ -73,7 +78,9 @@
   and inlined scripts; no external scripts, styles, fonts, or images. External
   hyperlinks (further reading) are plain links, opened in the same tab, with
   `rel="noopener noreferrer"` where applicable.
-- **Forms or data transmission:** None. The only input is an in-page search box.
+- **Forms or data transmission:** None sent anywhere. The search box and the
+  practice radio forms run entirely in page memory; practice forms prevent
+  submission and never transmit, store, or score answers.
 
 ## Content review
 
@@ -115,15 +122,14 @@ See `DECISIONS.md`. Summary: project renamed to **Argument Detective** (owner
 request, D1); `check` gate excludes browser e2e which runs as its own script and
 in CI (D2); Astro 5 content-layer API (D3); Node 22 in `.nvmrc` (D4); env-driven
 base path (D5); original inline SVG icons instead of an icon library (D6);
-optional `/practice/` deferred (D7); `@types/node` added for config typing (D8);
-privacy page uses the owner's simple-first format while preserving required copy
-(D9).
+optional `/practice/` deferred then built as Phase 5 (D7); `@types/node` added
+for config typing (D8); privacy page uses the owner's simple-first format while
+preserving required copy (D9); practice linked from homepage/footer/project
+guide but not the fixed global nav (D10); footer milestone version 0.5 → 0.7
+(D11).
 
 ## Known issues
 
-- **Optional practice deferred (P1):** The in-browser quick-check practice is not
-  built in this pass (see `DECISIONS.md` D7). It is unlinked, so nothing is
-  broken; it remains a future addition.
 - **Dev-only dependency advisories:** `npm audit` reports advisories in
   build-time dependencies (esbuild dev server, sharp) that ship with Astro's
   toolchain. They affect the local dev server only and are **not present in the
@@ -139,5 +145,5 @@ privacy page uses the owner's simple-first format while preserving required copy
 - **Decisions log:** `DECISIONS.md`.
 - **Content audit:** `CONTENT_AUDIT.md`.
 - **Content sources:** `CONTENT_SOURCES.md`.
-- **Screenshots:** `screenshots/` (home, fallacy, compare, how-arguments-work ×
-  mobile/tablet/desktop = 12 images).
+- **Screenshots:** `screenshots/` (home, fallacy, compare, how-arguments-work,
+  practice × mobile/tablet/desktop = 15 images).

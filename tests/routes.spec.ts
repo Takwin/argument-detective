@@ -12,6 +12,7 @@ const staticRoutes = [
   '/credits/',
   '/privacy/',
   '/accessibility/',
+  '/practice/',
 ];
 
 const fallacySlugs = [
@@ -81,4 +82,35 @@ test('404 page is helpful', async ({ page }) => {
   const res = await page.goto('/this-page-does-not-exist/');
   expect(res?.status()).toBe(404);
   await expect(page.locator('main').getByRole('link', { name: 'All 15 fallacies' })).toBeVisible();
+});
+
+test('practice: checking an answer reveals an explanation, not a bare verdict', async ({
+  page,
+}) => {
+  await page.goto('/practice/');
+  const first = page.locator('[data-quick-check]').first();
+  await first.getByRole('radio', { name: 'Straw Man' }).check();
+  await first.getByRole('button', { name: 'Check my thinking' }).click();
+  const feedback = first.locator('[data-qc-feedback]');
+  await expect(feedback).toBeVisible();
+  await expect(feedback).toContainText('Strong choice');
+  await expect(feedback).toContainText('Ava proposed five extra minutes');
+  await expect(feedback).toContainText('The bigger picture');
+});
+
+test('practice: a defensible answer is not marked wrong', async ({ page }) => {
+  await page.goto('/practice/');
+  const screenTime = page.locator('[data-quick-check]', { hasText: 'Screen-time advice' });
+  await screenTime.getByRole('radio', { name: 'Ad Hominem' }).check();
+  await screenTime.getByRole('button', { name: 'Check my thinking' }).click();
+  const feedback = screenTime.locator('[data-qc-feedback]');
+  await expect(feedback).toContainText('Defensible choice');
+  await expect(feedback).toContainText('tu quoque');
+});
+
+test('practice: checking with nothing selected asks for a choice', async ({ page }) => {
+  await page.goto('/practice/');
+  const first = page.locator('[data-quick-check]').first();
+  await first.getByRole('button', { name: 'Check my thinking' }).click();
+  await expect(first.locator('[data-qc-feedback]')).toContainText('Choose the label');
 });

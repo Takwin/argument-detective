@@ -26,8 +26,8 @@ export const site = {
   contentLicenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',
   codeLicense: 'MIT',
   /** Classroom-maturity milestone version shown in the footer. */
-  publicVersion: '0.5',
-  publicVersionLabel: 'MVP',
+  publicVersion: '0.7',
+  publicVersionLabel: 'Functional alpha',
   /** Contact/feedback method. Empty until the owner supplies one. */
   contactEmail: '',
 } as const;

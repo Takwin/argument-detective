@@ -14,6 +14,8 @@ database, no analytics, no cookies, and no runtime network requests.
 - "How Arguments Work" primer, a step-by-step project guide, and printable
   resources (cards, planner, all-topic chart).
 - In-browser search + family filters with a no-JavaScript fallback.
+- 10 practice quick-checks with explanation-based feedback — nothing scored,
+  stored, or transmitted.
 - Targets WCAG 2.2 AA.
 
 ## Tech stack

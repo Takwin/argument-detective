@@ -83,6 +83,21 @@ red-herring-vs-whataboutism, ad-hominem-vs-guilt-by-association,
 bandwagon-vs-appeal-to-authority, false-cause-vs-slippery-slope,
 circular-reasoning-vs-weak-evidence, straw-man-vs-strong-disagreement.
 
+## Practice scenarios (10)
+
+All original, in `src/data/practice.ts`, reviewed against the handoff's §9.4
+rules and enforced by `tests/practice-data.test.ts`:
+
+- Every option carries a teaching explanation (no bare correct/incorrect).
+- Exactly one "best" label per scenario; additional labels may be marked
+  "defensible," and explanations name the alternatives (e.g. whataboutism vs.
+  tu quoque/ad hominem; anecdotal vs. hasty generalization vs. false cause).
+- "Not a fallacy" appears in most scenarios and is the best answer in two
+  (relevant expert with evidence; tradition as the stated goal).
+- "Not enough context" is the best answer in one scenario, teaching that some
+  labels cannot be assigned from a single sentence.
+- No stored state or score; scenario content is classroom-safe and nonpartisan.
+
 ## Manual review notes
 
 - Definitions identify the reasoning move, not the person's character.

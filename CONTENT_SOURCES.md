@@ -37,6 +37,7 @@ their prose is not reproduced.
 | How Arguments Work                | Page     | Original         | —      | CC BY-NC 4.0 | New     | `/credits/`     | Yes      |
 | Project Guide                     | Page     | Original         | —      | CC BY-NC 4.0 | New     | `/credits/`     | Yes      |
 | Printable cards / planner / chart | Resource | Original         | —      | CC BY-NC 4.0 | New     | `/credits/`     | Yes      |
+| 10 practice scenarios             | Data     | Original         | —      | CC BY-NC 4.0 | New     | `/credits/`     | Yes      |
 
 ## Assets
 

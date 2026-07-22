@@ -64,16 +64,23 @@ choices, with reasons and tradeoffs.
   reference site's icon system; keeps the bundle tiny and fully original.
 - **Effect:** `THIRD_PARTY_NOTICES.md` reflects that no icon library ships.
 
-## D7 — Optional practice (`/practice/`) deferred
+## D7 — Optional practice (`/practice/`) deferred, then built
 
-- **Decision:** The optional in-browser quick-check practice (handoff P1, "build
-  only after P0 passes") is **not** included in this pass. Supporting styles for
-  a `QuickCheck` component exist in `components.css` for a future phase.
-- **Reason:** P0 is the priority; the handoff lists practice as an optional later
-  phase and a possible-non-goal-adjacent feature. Deferring keeps scope tight and
-  avoids shipping under-reviewed scenario content.
-- **Effect:** No route or link references `/practice/`; there are no broken
-  links. Listed as a known future addition, not a defect.
+- **Original decision:** The optional in-browser quick-check practice (handoff
+  P1, "build only after P0 passes") was deferred from the first pass to keep
+  scope tight until all P0 checks passed.
+- **Resolution (2026-07-22, same day):** With every P0 gate green and the site
+  deployed, the owner requested the practice module and it was built as
+  Phase 5: 10 reviewed scenarios in `src/data/practice.ts`, rendered by
+  `QuickCheck.astro` with client behavior in `src/scripts/quick-check.ts`.
+- **Handoff compliance (§9.4):** no accounts or stored score (page-memory only;
+  refresh clears everything); accessible fieldsets with labeled radios; "Not a
+  fallacy" and "Not enough context" options included where appropriate (each is
+  the _best_ answer in at least one scenario); answers reveal explanations, not
+  bare correct/incorrect verdicts ("Strong choice / Defensible choice / Worth
+  another look"); scenarios with multiple defensible labels say so explicitly.
+  Without JavaScript, each scenario's native `<details>` discussion remains
+  available, so the page degrades gracefully.
 
 ## D8 — `@types/node` added
 
@@ -91,3 +98,24 @@ choices, with reasons and tradeoffs.
   standing preference for a short, reassuring lead. The site is client-only, so
   the "no cookies / no storage / nothing leaves your device" claims are accurate.
 - **Effect:** Honest, accurate, and concise; full required language is preserved.
+
+## D10 — Practice reachable from homepage/footer, not the global nav
+
+- **Decision:** `/practice/` is linked from a homepage teaser, the footer
+  Explore list, and the project guide — but **not** added to the global header
+  navigation.
+- **Reason:** The handoff (§6.2) fixes the desktop nav order to six items and
+  does not include Practice. Keeping the specified nav preserves spec fidelity;
+  the three entry points make the page easily discoverable anyway.
+- **Effect:** ChatGPT Sol can promote it into the nav later by editing
+  `Header.astro` if desired.
+
+## D11 — Footer milestone version bumped 0.5 → 0.7
+
+- **Decision:** `publicVersion` in `site.ts` moved from `0.5` (MVP) to `0.7`
+  (Functional alpha).
+- **Reason:** Per the owner's classroom-maturity ladder, 0.7 means all planned
+  features work end-to-end. With the practice module built, every P0 and P1
+  feature of version 1 exists, is tested, and is deployed.
+- **Effect:** Footer badge only; bump to 0.85/1.0 belongs to the owner after
+  ChatGPT Sol review and classroom trial.

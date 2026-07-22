@@ -25,6 +25,7 @@ const targets = [
   { name: 'fallacy', path: '/fallacies/false-cause/' },
   { name: 'compare', path: '/compare/red-herring-vs-whataboutism/' },
   { name: 'how-arguments-work', path: '/how-arguments-work/' },
+  { name: 'practice', path: '/practice/' },
 ];
 
 const browser = await chromium.launch();
