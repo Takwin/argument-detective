@@ -81,16 +81,25 @@ node scripts/screenshots.mjs   # in another; writes to screenshots/
 
 ## Deploy
 
-### GitHub Pages (default recommendation)
+**Production:** <https://argumentdetective.rinehartexcel.com> — Cloudflare Pages
+project `argument-detective`, deployed by direct upload:
 
-`.github/workflows/deploy-pages.yml` builds and deploys on every push to `main`.
-It reads the origin and base path that GitHub Pages assigns, so it works for both
-a user/org site (served at `/`) and a project site (served at
-`/<repository-name>/`) with no source changes. Enable Pages in the repository
-settings with "GitHub Actions" as the source.
+```bash
+npm run build
+npx wrangler@4 pages deploy dist --project-name argument-detective --branch main
+```
 
 `.github/workflows/ci.yml` runs formatting, type/content checks, unit tests, the
 build, and the Playwright e2e/accessibility suite on pull requests and pushes.
+
+### GitHub Pages (portable fallback)
+
+`.github/workflows/deploy-pages.yml` can deploy to GitHub Pages, but it is
+**manual-only** (`workflow_dispatch`) since Cloudflare is the production host.
+It reads the origin and base path that GitHub Pages assigns, so it works for
+both a user/org site (served at `/`) and a project site (served at
+`/<repository-name>/`) with no source changes. To use it, enable Pages in the
+repository settings with "GitHub Actions" as the source, then run the workflow.
 
 ### Any other static host (Cloudflare Pages, Netlify, etc.)
 

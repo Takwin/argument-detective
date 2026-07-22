@@ -19,8 +19,8 @@ export const site = {
   owner: 'Roderic Rinehart',
   /** Where the owner links back to (footer signature). */
   ownerUrl: 'https://rinehart-hq.pages.dev/',
-  /** Public repository URL (update after first push). */
-  repositoryUrl: 'https://github.com/roderic/argument-detective',
+  /** Public repository URL. */
+  repositoryUrl: 'https://github.com/Takwin/argument-detective',
   /** Content license. */
   contentLicense: 'CC BY-NC 4.0',
   contentLicenseUrl: 'https://creativecommons.org/licenses/by-nc/4.0/',

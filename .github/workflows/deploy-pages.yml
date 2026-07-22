@@ -1,8 +1,10 @@
 name: Deploy to GitHub Pages
 
+# Production hosting is Cloudflare Pages (direct upload) at
+# https://argumentdetective.rinehartexcel.com — this workflow is a portable
+# fallback only. Run it manually if the site ever needs to move to GitHub
+# Pages; it is intentionally NOT triggered on push.
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:

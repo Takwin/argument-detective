@@ -70,12 +70,43 @@ for (const slug of comparisonSlugs) {
   });
 }
 
-test('homepage search filters to one result and clears', async ({ page }) => {
+test('homepage search visually hides non-matching cards', async ({ page }) => {
   await page.goto('/');
   const search = page.getByRole('searchbox');
   await search.fill('what about');
   await expect(page.locator('[data-results-status]')).toHaveText(/Showing 1 of 15/);
+  // Assert computed visibility, not just the counter or the hidden property:
+  // a CSS display rule overriding [hidden] once left all 15 cards visible.
+  await expect(page.locator('[data-fallacy-card]:visible')).toHaveCount(1);
   await expect(page.getByRole('heading', { name: 'Whataboutism' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Straw Man' })).toBeHidden();
+
+  // Clearing restores every card.
+  await search.clear();
+  await expect(page.locator('[data-fallacy-card]:visible')).toHaveCount(15);
+});
+
+test.describe('320px reflow (WCAG 1.4.10)', () => {
+  test.use({ viewport: { width: 320, height: 800 } });
+
+  const reflowPages = [
+    '/',
+    '/fallacies/slippery-slope/', // "Make an Unsupported Leap" badge (longest)
+    '/compare/bandwagon-vs-appeal-to-authority/',
+    '/practice/',
+    '/project-guide/',
+  ];
+
+  for (const path of reflowPages) {
+    test(`no horizontal overflow at 320px: ${path}`, async ({ page }) => {
+      await page.goto(path);
+      const overflow = await page.evaluate(() => {
+        const doc = document.documentElement;
+        return doc.scrollWidth - doc.clientWidth;
+      });
+      expect(overflow, `document scrolls horizontally by ${overflow}px`).toBeLessThanOrEqual(0);
+    });
+  }
 });
 
 test('404 page is helpful', async ({ page }) => {
