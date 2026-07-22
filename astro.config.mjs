@@ -16,7 +16,7 @@ import { defineConfig } from 'astro/config';
  * way that breaks a sub-path deploy — always resolve URLs through
  * `withBase()` in src/data/site.ts.
  */
-const SITE_URL = process.env.SITE_URL ?? 'https://argument-detective.pages.dev';
+const SITE_URL = process.env.SITE_URL ?? 'https://argumentdetective.rinehartexcel.com';
 const BASE_PATH = process.env.BASE_PATH ?? '/';
 
 export default defineConfig({

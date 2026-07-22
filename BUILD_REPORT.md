@@ -6,9 +6,8 @@
 - **Commit:** Initial commit on `main` (`git log -1` for the current hash)
 - **Build date:** 2026-07-22
 - **Implementation agent:** Claude (Opus 4.8)
-- **Production preview URL:** Not yet deployed. Serve locally with
-  `npm run build && npm run preview` (<http://localhost:4321>). Deploy workflow
-  included for GitHub Pages; portable to any static host.
+- **Production URL:** <https://argumentdetective.rinehartexcel.com> — live on
+  Cloudflare Pages (direct upload), custom domain active.
 
 ## Completed scope
 
@@ -98,12 +97,14 @@
 
 ## Deployment
 
-- **Host:** GitHub Pages workflow provided (`.github/workflows/deploy-pages.yml`);
-  CI workflow provided (`.github/workflows/ci.yml`). Portable to Cloudflare Pages,
-  Netlify, or any static host.
-- **Base path:** Env-driven (`BASE_PATH`), defaults to `/`; Pages deploy uses the
-  assigned project sub-path automatically.
-- **Custom domain status:** Optional; not configured.
+- **Host:** Deployed to **Cloudflare Pages** (project `argument-detective`, direct
+  upload of `dist/`). GitHub Pages workflow (`.github/workflows/deploy-pages.yml`)
+  and CI workflow (`.github/workflows/ci.yml`) also provided; portable to any
+  static host.
+- **Base path:** `/` (root deploy). Env-driven (`SITE_URL`/`BASE_PATH`) with the
+  production canonical baked in as the default.
+- **Custom domain status:** **Active** — `argumentdetective.rinehartexcel.com`
+  (proxied CNAME in the `rinehartexcel.com` zone → `argument-detective.pages.dev`).
 - **Exact deployment steps:** See `README.md` → Deploy. Enable Pages with "GitHub
   Actions" as the source and push to `main`; or `npm run build` and upload `dist/`
   to any static host (set `SITE_URL`/`BASE_PATH` for non-root deploys).

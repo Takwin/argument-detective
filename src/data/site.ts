@@ -33,7 +33,8 @@ export const site = {
 } as const;
 
 /** Configured canonical origin (no trailing slash), from astro.config.mjs. */
-export const SITE_URL: string = import.meta.env.SITE ?? 'https://argument-detective.pages.dev';
+export const SITE_URL: string =
+  import.meta.env.SITE ?? 'https://argumentdetective.rinehartexcel.com';
 
 /**
  * Configured base path. Astro guarantees `BASE_URL` is set from `base`.
