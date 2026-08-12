@@ -29,7 +29,9 @@ if (!normalized.startsWith('/')) normalized = '/' + normalized;
 <header class="site-header">
   <div class="page site-header__inner">
     <a class="brand" href={withBase('/')}>
-      <span class="brand__mark"><Icon name="compass" size={34} /></span>
+      <span class="brand__mark">
+        <img src={withBase('/favicon.svg')} width="34" height="34" alt="" />
+      </span>
       <span>
         <span class="brand__name">{site.name}</span>
         <span class="brand__sub">{site.subtitle}</span>
