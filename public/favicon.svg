@@ -1,7 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
-  <rect width="32" height="32" rx="7" fill="#1f3653"/>
-  <g fill="none" stroke="#f7f4ec" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="14" cy="14" r="7"/>
-    <line x1="19.5" y1="19.5" x2="25" y2="25"/>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Argument Detective">
+  <defs>
+    <linearGradient id="tile" x1="3" y1="2" x2="29" y2="30" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#171940"/>
+      <stop offset="0.55" stop-color="#0d1530"/>
+      <stop offset="1" stop-color="#070a18"/>
+    </linearGradient>
+    <linearGradient id="rim" x1="5" y1="5" x2="27" y2="27" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#43ddff"/>
+      <stop offset="0.52" stop-color="#4f8cff"/>
+      <stop offset="1" stop-color="#9b5cff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="32" height="32" rx="7" fill="url(#tile)"/>
+  <rect x="1.1" y="1.1" width="29.8" height="29.8" rx="6.1" fill="none" stroke="url(#rim)" stroke-width="1.2" opacity="0.78"/>
+  <rect x="2.55" y="2.55" width="26.9" height="26.9" rx="5" fill="none" stroke="#b6f3ff" stroke-width="0.55" opacity="0.12"/>
+
+  <path d="M18.65 18.45 25.5 25.3" fill="none" stroke="#8f63ff" stroke-width="5" stroke-linecap="round" opacity="0.17"/>
+  <path d="M18.65 18.45 25.5 25.3" fill="none" stroke="url(#rim)" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="13" cy="12.8" r="8" fill="#0b1932" stroke="url(#rim)" stroke-width="4.4" opacity="0.18"/>
+  <circle cx="13" cy="12.8" r="8" fill="#0b1932" stroke="url(#rim)" stroke-width="2.65"/>
+
+  <path d="M8.9 9.15h8.2v5.55h-3.2l-2.45 1.9v-1.9H8.9Z" fill="#121f3d" stroke="#d9f9ff" stroke-width="1.05" stroke-linejoin="round"/>
+  <path d="M10.35 11.15h5.25" fill="none" stroke="#4ce3ff" stroke-width="1.15" stroke-linecap="round"/>
+  <path d="M10.35 13.15h1.75l.55-.55.55 1.1.55-.55h1.85" fill="none" stroke="#a978ff" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

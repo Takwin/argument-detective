@@ -26,6 +26,9 @@
   flex: none;
   color: var(--navy);
 }
+.brand__mark img {
+  display: block;
+}
 .brand__name {
   font-weight: 800;
   font-size: 1.15rem;
