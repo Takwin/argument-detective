@@ -18,7 +18,7 @@ export const site = {
   /** Owner display name for attribution. */
   owner: 'Roderic Rinehart',
   /** Where the owner links back to (footer signature). */
-  ownerUrl: 'https://rinehart-hq.pages.dev/',
+  ownerUrl: 'https://rinehartexcel.com/about',
   /** Public repository URL. */
   repositoryUrl: 'https://github.com/Takwin/argument-detective',
   /** Content license. */
